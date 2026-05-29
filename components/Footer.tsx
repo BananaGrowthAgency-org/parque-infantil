@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Logo from "./Logo";
 import Wave from "./Wave";
 
@@ -168,8 +169,25 @@ export default function Footer({ waveBg = "#F9FAFB" }: { waveBg?: string }) {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-3 text-gray-400 text-sm font-nunito">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-gray-400 text-sm font-nunito">
             <p>© 2026 Ludykid · Tous droits réservés.</p>
+
+            <a
+              href="https://www.banana-growth.agency/accompagnement-marketing-digital-parc-de-loisir"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center gap-1"
+            >
+              <span className="text-xs text-gray-500 font-nunito tracking-wide">réalisé par</span>
+              <Image
+                src="/images/iconos/bga-logo.png"
+                alt="Banana Growth Agency"
+                width={120}
+                height={42}
+                className="object-contain"
+              />
+            </a>
+
             <ul className="flex flex-wrap gap-x-6 gap-y-2 justify-center">
               {LEGAL.map((l) => (
                 <li key={l.label}>
