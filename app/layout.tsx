@@ -24,6 +24,10 @@ export const metadata: Metadata = {
   title: "Ludykid Le Mans | Parc de jeux indoor enfants (1–12 ans)",
   description:
     "Plaine de jeux intérieure au Mans : Ludykid accueille les enfants de 1 à 12 ans avec 1200 m² d'activités, anniversaires clé en main et espace restauration",
+  icons: {
+    icon: [{ url: "/favicon.png", type: "image/png" }],
+    apple: [{ url: "/favicon.png" }],
+  },
 };
 
 export default function RootLayout({
