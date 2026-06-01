@@ -167,25 +167,47 @@ export default function Navbar() {
               href="tel:+33243414869"
               className="flex items-center gap-2 pl-3 pr-4 py-2 rounded-full shadow-clay-inset transition-all duration-300 hover:scale-105 hover:-translate-y-0.5"
               style={{ backgroundColor: phoneColor.bg }}
-              aria-label="Appeler pour réserver"
+              aria-label="Appeler Ludykid"
             >
               {phoneIcon(20)}
               <span className="font-fredoka font-bold text-sm" style={{ color: phoneColor.icon }}>
+                Appeler
+              </span>
+            </a>
+            <a
+              href="https://ludykid.qweekle.com/shop/ludykid/ticketing?lang=fr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 pl-3 pr-4 py-2 rounded-full shadow-clay-inset transition-all duration-300 hover:scale-105 hover:-translate-y-0.5 bg-[#E8731A]"
+              aria-label="Réserver en ligne"
+            >
+              <span className="font-fredoka font-bold text-sm text-white">
                 Réserver
               </span>
             </a>
           </div>
 
           {/* Mobile toggle */}
-          <div className="md:hidden flex items-center gap-2">
+          <div className="md:hidden flex items-center gap-1.5">
             <a
               href="tel:+33243414869"
               className="flex items-center gap-1.5 pl-2.5 pr-3 py-1.5 rounded-full shadow-clay-inset transition-all duration-300 hover:scale-105"
               style={{ backgroundColor: phoneColor.bg }}
-              aria-label="Appeler pour réserver"
+              aria-label="Appeler Ludykid"
             >
               {phoneIcon(16)}
               <span className="font-fredoka font-bold text-xs" style={{ color: phoneColor.icon }}>
+                Appeler
+              </span>
+            </a>
+            <a
+              href="https://ludykid.qweekle.com/shop/ludykid/ticketing?lang=fr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center py-1.5 px-3 rounded-full shadow-clay-inset transition-all duration-300 hover:scale-105 bg-[#E8731A]"
+              aria-label="Réserver en ligne"
+            >
+              <span className="font-fredoka font-bold text-xs text-white">
                 Réserver
               </span>
             </a>
@@ -261,9 +283,12 @@ export default function Navbar() {
             );
           })}
 
-          <div className="mt-3 self-stretch flex justify-center">
+          <div className="mt-3 self-stretch flex justify-center gap-3">
             <ClayButton href="tel:+33243414869" tone="orange" size="md" onClick={() => setMenuOpen(false)}>
               📞 Appeler
+            </ClayButton>
+            <ClayButton href="https://ludykid.qweekle.com/shop/ludykid/ticketing?lang=fr" tone="orange" size="md" onClick={() => setMenuOpen(false)} target="_blank" rel="noopener noreferrer">
+              🎟️ Réserver
             </ClayButton>
           </div>
         </div>
