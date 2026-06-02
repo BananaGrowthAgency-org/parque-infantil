@@ -42,7 +42,7 @@ const FORMULES = [
 //   "✓ texto"  → pastilla verde + texto debajo
 //   "texto"    → solo texto
 const ROWS: { label: string; vals: string[] }[] = [
-  { label: "Accès au parc", vals: ["Illimité", "Illimité", "Illimité", "Illimité"] },
+  { label: "Accès au parc", vals: ["Illimité", "Illimité", "Illimité", "✓"] },
   {
     label: "Animations",
     vals: [
@@ -66,13 +66,13 @@ const ROWS: { label: string; vals: string[] }[] = [
   {
     label: "Boissons",
     vals: [
-      "✓ Sirop à l'eau a volonté + champomy 🍾",
-      "✓ Sirop à l'eau a volonté",
+      "✓ Sirop à l'eau + champomy 🍾",
+      "✓ Sirop à l'eau",
       "✕",
       "✕",
     ],
   },
-  { label: "Sachet de bonbon", vals: ["✓ 130g / enfants", "✓ 50g / enfants", "✕", "✕"] },
+  { label: "Bol de bonbons", vals: ["✓ 130g / enfants", "✓ 50g / enfants", "✕", "✕"] },
   { label: "Photo souvenir", vals: ["✓", "✕", "✕", "✕"] },
   { label: "1 jeton bumper offert / enfant", vals: ["✓", "✕", "✕", "✕"] },
   { label: "1 entrée offerte pour la star de la journée", vals: ["✓", "✕", "✕", "✕"] },

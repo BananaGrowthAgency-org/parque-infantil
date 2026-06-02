@@ -87,8 +87,8 @@ const secciones = [
     items: [
       { icon: "⚡", label: "2 Grands trampolines", desc: "" },
       { icon: "🎂", label: "Activité idéale pour anniversaire", desc: "" },
-      { icon: "🐣", label: "Accessible à tout âge", desc: "" },
-      { icon: "🔒", label: "Encadré et sécurisé", desc: "" },
+      { icon: "🐣", label: "À partir de 4 ans", desc: "" },
+      { icon: "🔒", label: "Fun et sécurisé", desc: "" },
     ],
     precio: "inclus dans l'entrée au parc",
     imagen: "/images/home/seccion3.jpg",

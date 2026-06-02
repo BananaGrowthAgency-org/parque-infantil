@@ -14,7 +14,7 @@ const HORARIOS = [
   {
     dia: "VACANCES SCOLAIRES",
     hora:
-      "Tous les jours 10h–19h\n(Fermé les 24, 25 et 31 décembre et le 1er janvier)\nJuillet et août : 10h–18h, fermé le dimanche",
+      "Tous les jours 10h–19h\n(Fermé le 25 décembre et le 1er janvier)\nJuillet et août : 10h–18h, fermé le dimanche",
   },
   { dia: "JOURS FÉRIÉS", hora: "Nous consulter" },
 ];

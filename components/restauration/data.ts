@@ -125,7 +125,7 @@ export const CATEGORIES: Categorie[] = [
           },
           {
             name: "Bouteille 50 cL",
-            note: "(sauf FuzeTea 40 cL)",
+            note: "(sauf FuzeTea & Tropico 40 cL)",
             subnote: [
               "Fanta Orange, Sprite, Fuzetea pêche,",
               "Coca (normal, zéro, cherry), Tropico, Orangina",

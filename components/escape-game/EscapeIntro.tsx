@@ -56,6 +56,7 @@ export default function EscapeIntro({ nextBg = "#F4FBF4" }: { nextBg?: string })
                 alt="Escape Game enfant chez Ludykid Le Mans"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
+                style={{ objectPosition: "center 10%" }}
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
 

@@ -74,7 +74,7 @@ export default function Cumple({ nextBg = "#FFF9E0", tone = "green", reverse = f
               <ul className="space-y-3 mb-4">
                 {[
                   { icon: "🎂", text: "Goûter inclus" },
-                  { icon: "🐣", text: "Animations encadrées" },
+                  { icon: "🐣", text: "Animations" },
                   { icon: "🎁", text: "Surprises & cadeaux" },
                   { icon: "🎈", text: "Accès illimité au parc" },
                 ].map((item, i) => (
