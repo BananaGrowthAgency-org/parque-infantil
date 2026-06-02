@@ -90,7 +90,7 @@ const secciones = [
       { icon: "🐣", label: "Accessible à tout âge", desc: "" },
       { icon: "🔒", label: "Encadré et sécurisé", desc: "" },
     ],
-    precio: "Dès 4,50€ / enfant",
+    precio: "inclus dans l'entrée au parc",
     imagen: "/images/home/seccion3.jpg",
     alt: "Enfant qui saute sur un trampoline",
     invertida: true,
