@@ -12,6 +12,13 @@ export const metadata = {
   title: "Ludykid | Escape Game Enfant Le Mans",
   description:
     "À la recherche d'un escape game pour votre enfant au Mans ? Offrez-lui une aventure ludique en réalité augmentée qui stimule logique et esprit d'équipe.",
+  openGraph: {
+    title: "Ludykid | Escape Game Enfant Le Mans",
+    description: "À la recherche d'un escape game pour votre enfant au Mans ? Offrez-lui une aventure ludique en réalité augmentée qui stimule logique et esprit d'équipe.",
+    url: "https://www.ludykid.com/escape-game-le-mans",
+    images: [{ url: "/images/escape-game/section1.jpg", alt: "Escape Game enfant Ludykid Le Mans" }],
+  },
+  alternates: { canonical: "https://www.ludykid.com/escape-game-le-mans" },
 };
 
 export default function EscapeGamePage() {

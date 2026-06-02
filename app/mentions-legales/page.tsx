@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 export const metadata = {
   title: "Mentions légales – Ludykid Le Mans",
   description: "Mentions légales, politique de confidentialité et gestion des cookies du site Ludykid.",
+  alternates: { canonical: "https://www.ludykid.com/mentions-legales" },
 };
 
 const SECTIONS = [

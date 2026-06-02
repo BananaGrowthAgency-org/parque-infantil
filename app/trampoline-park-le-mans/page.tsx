@@ -12,6 +12,13 @@ export const metadata = {
   title: "Ludykid | Espace Trampoline Enfant Le Mans",
   description:
     "À la recherche d'un espace trampoline pour votre enfant au Mans ? Offrez-lui un espace ludique et sécurisé pour se dépenser et s'amuser chez Ludykid.",
+  openGraph: {
+    title: "Ludykid | Espace Trampoline Enfant Le Mans",
+    description: "À la recherche d'un espace trampoline pour votre enfant au Mans ? Offrez-lui un espace ludique et sécurisé pour se dépenser et s'amuser chez Ludykid.",
+    url: "https://www.ludykid.com/trampoline-park-le-mans",
+    images: [{ url: "/images/home/trampoline2.jpg", alt: "Espace trampoline Ludykid Le Mans" }],
+  },
+  alternates: { canonical: "https://www.ludykid.com/trampoline-park-le-mans" },
 };
 
 export default function TrampolinePage() {

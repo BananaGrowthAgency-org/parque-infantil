@@ -10,6 +10,13 @@ export const metadata = {
   title: "Tarifs & Horaires · Ludykid Le Mans",
   description:
     "Découvrez les tarifs et horaires du parc Ludykid au Mans. Entrées pour enfants de 1 à 12 ans, cartes 10 entrées, tarifs groupes et accompagnateurs.",
+  openGraph: {
+    title: "Tarifs & Horaires · Ludykid Le Mans",
+    description: "Découvrez les tarifs et horaires du parc Ludykid au Mans. Entrées pour enfants de 1 à 12 ans, cartes 10 entrées, tarifs groupes et accompagnateurs.",
+    url: "https://www.ludykid.com/tarifs",
+    images: [{ url: "/images/home/tobogan-azul.jpg", alt: "Tarifs Ludykid Le Mans" }],
+  },
+  alternates: { canonical: "https://www.ludykid.com/tarifs" },
 };
 
 const HORARIOS = [

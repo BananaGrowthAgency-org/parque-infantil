@@ -12,6 +12,13 @@ export const metadata = {
   title: "Ludykid | Parc Accrobranche Indoor Le Mans",
   description:
     "À la recherche d'un accrobranche pour votre enfant au Mans ? Offrez-lui un parcours ludique et sécurisé pour développer agilité et confiance chez Ludykid.",
+  openGraph: {
+    title: "Ludykid | Parc Accrobranche Indoor Le Mans",
+    description: "À la recherche d'un accrobranche pour votre enfant au Mans ? Offrez-lui un parcours ludique et sécurisé pour développer agilité et confiance chez Ludykid.",
+    url: "https://www.ludykid.com/accrobranche-le-mans",
+    images: [{ url: "/images/home/accrobranche-hero.jpg", alt: "Accrobranche indoor Ludykid Le Mans" }],
+  },
+  alternates: { canonical: "https://www.ludykid.com/accrobranche-le-mans" },
 };
 
 export default function AccrobranchePage() {

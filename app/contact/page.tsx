@@ -5,6 +5,13 @@ import ContactForm from "@/components/ContactForm";
 export const metadata = {
   title: "Contact – Ludykid Le Mans",
   description: "Contactez l'équipe Ludykid pour toute question sur le parc, les anniversaires ou les réservations.",
+  openGraph: {
+    title: "Contact – Ludykid Le Mans",
+    description: "Contactez l'équipe Ludykid pour toute question sur le parc, les anniversaires ou les réservations.",
+    url: "https://www.ludykid.com/contact",
+    images: [{ url: "/images/home/tobogan-azul.jpg", alt: "Contact Ludykid Le Mans" }],
+  },
+  alternates: { canonical: "https://www.ludykid.com/contact" },
 };
 
 export default function ContactPage() {

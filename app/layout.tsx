@@ -21,13 +21,73 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Ludykid Le Mans | Parc de jeux indoor enfants (1–12 ans)",
+  metadataBase: new URL("https://www.ludykid.com"),
+  title: {
+    default: "Ludykid Le Mans | Parc de jeux indoor enfants (1–12 ans)",
+    template: "%s",
+  },
   description:
-    "Plaine de jeux intérieure au Mans : Ludykid accueille les enfants de 1 à 12 ans avec 1200 m² d'activités, anniversaires clé en main et espace restauration",
+    "Plaine de jeux intérieure au Mans : Ludykid accueille les enfants de 1 à 12 ans avec 1 200 m² d'activités, anniversaires clé en main et espace restauration.",
   icons: {
     icon: [{ url: "/favicon.png", type: "image/png" }],
     apple: [{ url: "/favicon.png" }],
   },
+  openGraph: {
+    siteName: "Ludykid Le Mans",
+    locale: "fr_FR",
+    type: "website",
+    images: [
+      {
+        url: "/images/home/tobogan-azul.jpg",
+        alt: "Ludykid Le Mans – Parc de jeux indoor enfants",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Ludykid Le Mans",
+  description:
+    "Parc de jeux indoor pour enfants de 1 à 12 ans au Mans. 1 200 m² d'activités couvertes : trampolines, escape game, laser game, accrobranche, espace restauration et anniversaires clé en main.",
+  url: "https://www.ludykid.com",
+  telephone: "+33243414869",
+  email: "contact@ludykid.com",
+  image: "https://www.ludykid.com/favicon.png",
+  priceRange: "€€",
+  currenciesAccepted: "EUR",
+  paymentAccepted: "Cash, Credit Card",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "ZAC des Hunaudières, Rte du Petit Bel Oeuvre",
+    addressLocality: "Ruaudin",
+    postalCode: "72230",
+    addressCountry: "FR",
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Wednesday", "Saturday", "Sunday"],
+      opens: "10:00",
+      closes: "19:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Friday",
+      opens: "15:00",
+      closes: "19:00",
+    },
+  ],
+  sameAs: [
+    "https://www.instagram.com/ludykid/",
+    "https://www.facebook.com/LUDYKIDPlainedejeuxcouverte/",
+    "https://www.linkedin.com/company/ludykid/",
+    "https://www.youtube.com/@ludykidparc6194/shorts",
+  ],
 };
 
 export default function RootLayout({
@@ -35,6 +95,12 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="fr">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+      </head>
       <body className={`${fredoka.variable} ${nunito.variable} font-nunito bg-white`}>
         <PromoBanner />
         {children}

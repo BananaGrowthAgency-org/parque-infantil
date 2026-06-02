@@ -12,6 +12,13 @@ export const metadata = {
   title: "Ludykid | Laser Game Enfant Le Mans",
   description:
     "À la recherche d'un laser game pour votre enfant au Mans ? Offrez-lui une activité ludique qui développe esprit d'équipe et coordination chez Ludykid.",
+  openGraph: {
+    title: "Ludykid | Laser Game Enfant Le Mans",
+    description: "À la recherche d'un laser game pour votre enfant au Mans ? Offrez-lui une activité ludique qui développe esprit d'équipe et coordination chez Ludykid.",
+    url: "https://www.ludykid.com/laser-game-le-mans",
+    images: [{ url: "/images/laser-game/laserSection1.jpg", alt: "Laser Game enfant Ludykid Le Mans" }],
+  },
+  alternates: { canonical: "https://www.ludykid.com/laser-game-le-mans" },
 };
 
 export default function LaserGamePage() {
