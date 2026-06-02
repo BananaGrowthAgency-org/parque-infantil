@@ -5,14 +5,16 @@ import "./globals.css";
 
 const fredoka = Fredoka({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "600", "700"],
   variable: "--font-fredoka",
+  display: "swap",
 });
 
 const nunito = Nunito({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "600", "700", "800"],
   variable: "--font-nunito",
+  display: "swap",
 });
 
 export const viewport: Viewport = {
@@ -96,6 +98,10 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <head>
+        {/* Preconnect para recursos de terceros críticos */}
+        <link rel="preconnect" href="https://elfsightcdn.com" />
+        <link rel="dns-prefetch" href="https://elfsightcdn.com" />
+        <link rel="preconnect" href="https://storage.googleapis.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
