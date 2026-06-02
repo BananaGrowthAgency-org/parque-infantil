@@ -58,7 +58,7 @@ export default function TrampolineIntro({ nextBg = "#FFF8EC" }: { nextBg?: strin
                   className="font-fredoka font-bold text-white text-sm px-5 py-2.5 rounded-full shadow-clay-sm animate-float inline-flex items-center gap-2"
                   style={{ backgroundColor: "#E8731A" }}
                 >
-                  👉 Dès 4,50 € / enfant
+                  inclus dans l&apos;entrée au parc
                 </span>
               </div>
             </div>

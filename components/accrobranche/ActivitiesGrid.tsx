@@ -12,6 +12,7 @@ type Activity = {
   alt: string;
   href: string;
   iconSrc: string;
+  mobilePos?: string;
 };
 
 const ACTIVITIES: Activity[] = [
@@ -22,6 +23,7 @@ const ACTIVITIES: Activity[] = [
     alt: "Escape game enfant chez Ludykid",
     href: "/escape-game-le-mans",
     iconSrc: "/images/iconos/icones-services/escapeGame.png",
+    mobilePos: "object-top sm:object-center",
   },
   {
     title: "Espace trampoline",
@@ -30,6 +32,7 @@ const ACTIVITIES: Activity[] = [
     alt: "Trampoline park chez Ludykid",
     href: "/trampoline-park-le-mans",
     iconSrc: "/images/iconos/icones-services/trampoline.png",
+    mobilePos: "object-top sm:object-center",
   },
   {
     title: "Laser game",
@@ -38,6 +41,7 @@ const ACTIVITIES: Activity[] = [
     alt: "Laser game enfant chez Ludykid",
     href: "/laser-game-le-mans",
     iconSrc: "/images/iconos/icones-services/laserGame.png",
+    mobilePos: "object-[center_25%] sm:object-center",
   },
   {
     title: "Restauration",
@@ -78,7 +82,7 @@ export default function ActivitiesGrid() {
                         src={a.image}
                         alt={a.alt}
                         fill
-                        className="object-cover"
+                        className={`object-cover ${a.mobilePos ?? "object-center"}`}
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                       />
                     </div>

@@ -20,6 +20,13 @@ const FEATURES = [
 export const metadata = {
   title: "Ludykid Le Mans | Garderie enfant parc indoor dès 4 ans",
   description: "À la recherche d'une garderie au Mans ? Confiez votre enfant dès 4 ans à un parc indoor sécurisé avec jeux, activités ludiques et animateurs.",
+  openGraph: {
+    title: "Ludykid Le Mans | Garderie enfant parc indoor dès 4 ans",
+    description: "À la recherche d'une garderie au Mans ? Confiez votre enfant dès 4 ans à un parc indoor sécurisé avec jeux, activités ludiques et animateurs.",
+    url: "https://www.ludykid.com/garderie",
+    images: [{ url: "/images/home/tobogan-azul.jpg", alt: "Garderie enfant Ludykid Le Mans" }],
+  },
+  alternates: { canonical: "https://www.ludykid.com/garderie" },
 };
 
 export default function GarderiePage() {
