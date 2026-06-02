@@ -175,7 +175,8 @@ export default function Navbar() {
               href="https://ludykid.qweekle.com/shop/ludykid/ticketing?lang=fr"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center pl-3 pr-4 py-2 rounded-full shadow-clay-inset transition-all duration-300 hover:scale-105 hover:-translate-y-0.5 bg-[#E8731A]"
+              className="flex items-center pl-3 pr-4 py-2 rounded-full shadow-clay-inset transition-all duration-300 hover:scale-105 hover:-translate-y-0.5"
+              style={{ backgroundColor: phoneColor.icon, transition: "background-color 0.3s, transform 0.3s" }}
               aria-label="Réserver en ligne"
             >
               <span className="font-fredoka font-bold text-sm text-white">
@@ -198,7 +199,8 @@ export default function Navbar() {
               href="https://ludykid.qweekle.com/shop/ludykid/ticketing?lang=fr"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center py-1.5 px-3 rounded-full shadow-clay-inset transition-all duration-300 hover:scale-105 bg-[#E8731A]"
+              className="flex items-center py-1.5 px-3 rounded-full shadow-clay-inset transition-all duration-300 hover:scale-105"
+              style={{ backgroundColor: phoneColor.icon, transition: "background-color 0.3s, transform 0.3s" }}
               aria-label="Réserver en ligne"
             >
               <span className="font-fredoka font-bold text-xs text-white">
@@ -278,7 +280,7 @@ export default function Navbar() {
           })}
 
           <div className="mt-3 self-stretch flex justify-center">
-            <ClayButton href="https://ludykid.qweekle.com/shop/ludykid/ticketing?lang=fr" tone="orange" size="md" onClick={() => setMenuOpen(false)} target="_blank" rel="noopener noreferrer">
+            <ClayButton href="https://ludykid.qweekle.com/shop/ludykid/ticketing?lang=fr" tone="orange" size="md" onClick={() => setMenuOpen(false)} target="_blank" rel="noopener noreferrer" style={{ backgroundColor: phoneColor.icon, transition: "background-color 0.3s" }}>
               🎟️ Réserver
             </ClayButton>
           </div>
