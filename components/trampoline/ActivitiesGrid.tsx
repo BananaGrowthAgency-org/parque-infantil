@@ -25,7 +25,7 @@ const ACTIVITIES: Activity[] = [
   {
     title: "Accrobranche",
     desc: "Un parcours indoor en hauteur pour se dépenser et gagner en confiance entre amis !",
-    image: "/images/accrobranche.JPG",
+    image: "/images/accrobranche.jpg",
     alt: "Accrobranche indoor chez Ludykid",
     href: "/accrobranche-le-mans",
     iconSrc: "/images/iconos/icones-services/accrobranche.png",
