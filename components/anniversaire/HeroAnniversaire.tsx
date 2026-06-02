@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import ClayButton from "../ui/ClayButton";
 
@@ -11,14 +12,24 @@ export default function HeroAnniversaire() {
       <div className="relative h-[68vh] min-h-[560px] sm:min-h-[500px]">
         {/* Capa vídeo con su propio overflow-hidden */}
         <div className="absolute inset-0 overflow-hidden">
+          {/* Poster optimizado → LCP rápido en WebP */}
+          <Image
+            src="/images/home/cumple.png"
+            alt="Anniversaire enfant chez Ludykid"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+          {/* Vídeo encima — cubre el poster en cuanto arranca */}
           <video
             src="/images/anniversaire/hero-anniversaire.mp4"
             autoPlay
             muted
             loop
             playsInline
-            preload="auto"
-            aria-label="Anniversaire enfant chez Ludykid"
+            preload="metadata"
+            aria-hidden="true"
             className="absolute inset-0 w-full h-full object-cover object-center"
           />
           <div

@@ -89,7 +89,7 @@ export default function Cumple({ nextBg = "#FFF9E0", tone = "green", reverse = f
                       <span className="font-nunito text-sm text-gray-700">
                         {item.text}
                         {item.icon === "🎂" && (
-                          <span className="text-gray-400"> (Selon la formule choisie)</span>
+                          <span className="text-gray-500"> (Selon la formule choisie)</span>
                         )}
                       </span>
                     </li>

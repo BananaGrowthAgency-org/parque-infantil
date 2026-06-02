@@ -26,7 +26,7 @@ export default function HeroRestauracion() {
             autoPlay
             muted
             playsInline
-            preload="auto"
+            preload="metadata"
             onEnded={() => setVidIdx((i) => (i + 1) % VIDEOS.length)}
             aria-label="Ludy'cafet chez Ludykid"
             initial={{ opacity: 0 }}

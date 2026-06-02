@@ -107,7 +107,7 @@ export default function EspacePetits() {
                         </span>
                         <span className="font-nunito text-sm text-gray-700">
                           <span className="font-bold" style={{ color: BRAND }}>{f.label}</span>
-                          {f.desc && <span className="text-gray-400"> — {f.desc}</span>}
+                          {f.desc && <span className="text-gray-500"> — {f.desc}</span>}
                         </span>
                       </li>
                     </FadeInUp>

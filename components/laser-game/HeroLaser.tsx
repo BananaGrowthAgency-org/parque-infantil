@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 
 export default function HeroLaser() {
@@ -10,16 +11,28 @@ export default function HeroLaser() {
       <div className="relative h-[55vh] min-h-[400px] sm:h-[68vh] sm:min-h-[460px]">
         {/* Capa vídeo — sube 64px para que el navbar tape la franja negra inicial */}
         <div className="absolute -top-16 bottom-0 inset-x-0 overflow-hidden">
+          {/* Móvil: imagen estática para LCP rápido */}
+          <div className="sm:hidden absolute inset-0">
+            <Image
+              src="/images/laser-game/laserSection1.jpg"
+              alt="Laser game enfant chez Ludykid"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-center"
+            />
+          </div>
+          {/* Desktop: vídeo */}
           <video
             src="/images/laser-game/anniv-laser.mp4"
-            poster="/images/home/seccion2.jpg"
+            poster="/images/laser-game/laserSection1.jpg"
             autoPlay
             muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
             aria-label="Laser game enfant chez Ludykid"
-            className="absolute inset-0 w-full h-full object-cover object-center"
+            className="hidden sm:block absolute inset-0 w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/40 to-transparent" />
           <div className="absolute bottom-0 inset-x-0 h-20 sm:h-28 bg-gradient-to-b from-[#F5EEFF]/0 via-[#F5EEFF]/85 to-[#F5EEFF] pointer-events-none" />

@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import StatsBar from "@/components/StatsBar";
 import Atracciones from "@/components/Atracciones";
 import Cumple from "@/components/Cumple";
-import Galerie from "@/components/Galerie";
-import Testimonios from "@/components/Testimonios";
 import InfosPratiques from "@/components/InfosPratiques";
 import Footer from "@/components/Footer";
+
+// Lazy-load heavy below-fold components → reduce TBT y bundle inicial
+const Testimonios = dynamic(() => import("@/components/Testimonios"));
+const Galerie = dynamic(() => import("@/components/Galerie"));
 
 export const metadata: Metadata = {
   title: "Ludykid Le Mans | Parc de jeux indoor enfants (1–12 ans)",

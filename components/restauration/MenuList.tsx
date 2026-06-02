@@ -27,7 +27,7 @@ export default function MenuList({ items }: { items: Item[] }) {
             )}
           </div>
           {item.subnote && (
-            <div className="font-nunito italic text-gray-400 text-base mt-1.5 leading-snug">
+            <div className="font-nunito italic text-gray-500 text-base mt-1.5 leading-snug">
               {(Array.isArray(item.subnote) ? item.subnote : [item.subnote]).map((line, lIdx) => (
                 <div key={lIdx}>{line}</div>
               ))}

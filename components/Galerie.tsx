@@ -252,7 +252,7 @@ export default function Galerie() {
         </div>
 
         {/* Contador */}
-        <div className="text-center mt-3 font-fredoka text-sm text-gray-400">
+        <div className="text-center mt-3 font-fredoka text-sm text-gray-500">
           {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
         </div>
       </FadeInUp>

@@ -101,7 +101,7 @@ export default function Navbar() {
     <nav className={navClass}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-18 py-2">
-          <a href="/"><Logo size="sm" /></a>
+          <a href="/" aria-label="Accueil Ludykid"><Logo size="sm" /></a>
 
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-4">

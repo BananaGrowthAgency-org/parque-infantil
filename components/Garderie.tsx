@@ -149,7 +149,7 @@ export default function Garderie() {
               <p className="font-fredoka font-extrabold text-[#E8731A] text-sm">Tarifs :</p>
               <p className="font-nunito text-sm text-gray-700">10,00€ l&apos;heure (tarif dégressif)</p>
               <p className="font-nunito text-sm text-gray-500">(Renseignements à l&apos;accueil)</p>
-              <p className="font-nunito text-xs text-gray-400 italic">L&apos;entrée du parc est comprise dans les tarifs.</p>
+              <p className="font-nunito text-xs text-gray-500 italic">L&apos;entrée du parc est comprise dans les tarifs.</p>
             </div>
             <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-fredoka font-bold text-sm shadow-clay-sm" style={{ backgroundColor: "#FFF0E0", color: "#E8731A" }}>
               📍 Disponible uniquement sur place

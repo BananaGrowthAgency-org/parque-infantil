@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import ClayButton from "./ui/ClayButton";
 
@@ -10,24 +11,36 @@ export default function Hero() {
     <section id="inicio" className="relative pt-16 bg-[#FFF4EC]">
       <div className="relative h-[68vh] min-h-[560px] sm:min-h-[520px]">
 
-        {/* Capa vídeo con su propio overflow-hidden */}
+        {/* Capa media con su propio overflow-hidden */}
         <div className="absolute inset-0 overflow-hidden">
+
+          {/* Poster optimizado via Next.js Image → se convierte a WebP, prioridad alta → fix LCP */}
+          <Image
+            src="/images/autos.jpg"
+            alt="Enfants qui s'amusent à Ludykid"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+
+          {/* Vídeo encima — cubre el poster en cuanto arranca el autoplay */}
           <video
             src="/images/hero-header.mp4"
-            poster="/images/autos.jpg"
             autoPlay
             muted
             loop
             playsInline
-            preload="auto"
-            aria-label="Enfants qui s'amusent à Ludykid"
+            preload="metadata"
+            aria-hidden="true"
             className="absolute inset-0 w-full h-full object-cover object-center"
           />
+
           <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/25 to-transparent" />
           <div className="absolute bottom-0 inset-x-0 h-20 sm:h-28 bg-gradient-to-b from-[#FFF4EC]/0 to-[#FFF4EC] pointer-events-none" />
         </div>
 
-        {/* Capa contenido — sin overflow-hidden para que nunca se recorte */}
+        {/* Capa contenido */}
         <div className="absolute inset-0 flex items-center justify-center pt-8 sm:pt-0">
           <div className="text-center px-4 sm:px-6 w-full max-w-4xl">
 

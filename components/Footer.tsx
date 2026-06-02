@@ -169,7 +169,7 @@ export default function Footer({ waveBg = "#F9FAFB" }: { waveBg?: string }) {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-gray-400 text-sm font-nunito">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-gray-500 text-sm font-nunito">
             <p>© 2026 Ludykid · Tous droits réservés.</p>
 
             <a

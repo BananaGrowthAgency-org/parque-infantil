@@ -188,7 +188,7 @@ export default function PhotosAnniv() {
                     muted
                     loop
                     playsInline
-                    preload="auto"
+                    preload="metadata"
                     draggable={false}
                   />
                 ) : (

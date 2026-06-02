@@ -261,7 +261,7 @@ export default function Atracciones({ from = 0, to = secciones.length, lastBg = 
                           </span>
                           <span className="font-nunito text-sm text-gray-700">
                             <span className="font-bold" style={{ color: s.color }}>{item.label}</span>
-                            {item.desc && <span className="text-gray-400"> — {item.desc}</span>}
+                            {item.desc && <span className="text-gray-500"> — {item.desc}</span>}
                           </span>
                         </li>
                       </FadeInUp>
