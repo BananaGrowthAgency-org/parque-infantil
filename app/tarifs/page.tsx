@@ -266,7 +266,7 @@ export default function TarifsPage() {
                 <MapaModal />
                 <p className="font-nunito text-gray-600 text-sm leading-relaxed">
                   <strong className="text-gray-900 block mb-1">Ludykid</strong>
-                  Ruaudin, 72230 Le Mans<br />
+                  284 Route du Petit Bel Œuvre, 72230 Ruaudin<br />
                   <span className="text-xs text-gray-400">À côté de Décathlon et Antarès</span>
                 </p>
               </div>

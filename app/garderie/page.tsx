@@ -6,9 +6,9 @@ import Testimonios from "@/components/Testimonios";
 import InfosPratiques from "@/components/InfosPratiques";
 import FadeInUp from "@/components/ui/FadeInUp";
 
-const ORANGE = "#E8731A";
+const PURPLE = "#7B35A0";
 
-const ACCENTS = ["#E8731A", "#7B35A0", "#2E9E2E", "#FFD600"];
+const ACCENTS = ["#7B35A0", "#E8731A", "#2E9E2E", "#FFD600"];
 
 const FEATURES = [
   { icon: "/images/iconos/enfants.png",                  label: "Dès 4 ans",            desc: "adapté aux tout-petits" },
@@ -31,7 +31,7 @@ export const metadata = {
 
 export default function GarderiePage() {
   return (
-    <main className="bg-[#FFF8EC] min-h-screen">
+    <main className="bg-[#F5EEFF] min-h-screen">
       <Navbar />
       <HeroGarderie />
 
@@ -47,7 +47,7 @@ export default function GarderiePage() {
                   style={{
                     width: 64,
                     height: 64,
-                    backgroundColor: ORANGE,
+                    backgroundColor: PURPLE,
                     WebkitMaskImage: `url(${f.icon})`,
                     maskImage: `url(${f.icon})`,
                     WebkitMaskRepeat: "no-repeat",
@@ -58,7 +58,7 @@ export default function GarderiePage() {
                     maskSize: "contain",
                   }}
                 />
-                <p className="font-fredoka font-extrabold text-[#E8731A] text-sm">{f.label}</p>
+                <p className="font-fredoka font-extrabold text-[#7B35A0] text-sm">{f.label}</p>
                 <p className="font-nunito text-gray-400 text-xs">{f.desc}</p>
               </div>
             </FadeInUp>

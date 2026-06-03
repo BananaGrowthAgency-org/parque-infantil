@@ -33,7 +33,7 @@ const FAQS = [
   },
   {
     q: "Faut-il réserver à l'avance ?",
-    a: "Non, l'accès au parc se fait sans réservation. Nous la recommandons toutefois le weekend et pendant les vacances scolaires pour garantir votre place.",
+    a: "Non, les entrées au parc ne sont pas réservables. Seules les formules anniversaire peuvent être réservées à l'avance. La billetterie en ligne est non datée.",
   },
   {
     q: "Peut-on organiser un anniversaire chez Ludykid ?",
@@ -41,7 +41,7 @@ const FAQS = [
   },
   {
     q: "Les parents doivent-ils rester sur place ?",
-    a: "Oui, un adulte accompagnant est obligatoire. L'entrée est gratuite pour les adultes, qui ont accès à l'espace restauration. L'accès aux attractions est en supplément (5 €).",
+    a: "Oui, la présence d'un adulte accompagnateur est obligatoire. Une participation de 1 € par adulte est demandée, qu'il accède ou non aux structures de jeux et à l'espace restauration.",
   },
   {
     q: "Y a-t-il de quoi manger sur place ?",
@@ -165,11 +165,7 @@ export default function InfosPratiques({ showTopWave = true }: { showTopWave?: b
               </a>
 
               <p className="mt-5 font-nunito text-sm text-gray-700 leading-relaxed">
-                <span className="font-fredoka font-extrabold text-gray-800 text-base">📍 Ruaudin, 72230</span>
-                <br />
-                Rte du Petit Bel Oeuvre
-                <br />
-                ZAC des Hunaudières
+                <span className="font-fredoka font-extrabold text-gray-800 text-base">📍 284 Route du Petit Bel Œuvre, 72230 Ruaudin</span>
               </p>
             </div>
           </FadeInUp>

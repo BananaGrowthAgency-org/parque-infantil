@@ -55,7 +55,7 @@ const FAQS: { q: string; a: ReactNode }[] = [
   },
   {
     q: "Est-ce qu'un animateur est présent ?",
-    a: "Oui, un animateur encadre les jeux et activités pour les formules MaxiLudy et Ludykid.",
+    a: "Oui, un animateur peut être présent pour encadrer et animer l'anniversaire si l'option animation a été choisie.",
   },
   {
     q: "Peut-on apporter son propre gâteau ou des collations ?",
@@ -178,11 +178,7 @@ export default function InfosAnniv() {
               </a>
 
               <p className="mt-5 font-nunito text-sm text-gray-700 leading-relaxed">
-                <span className="font-fredoka font-extrabold text-gray-800 text-base">📍 Ruaudin, 72230</span>
-                <br />
-                Rte du Petit Bel Oeuvre
-                <br />
-                ZAC des Hunaudières
+                <span className="font-fredoka font-extrabold text-gray-800 text-base">📍 284 Route du Petit Bel Œuvre, 72230 Ruaudin</span>
               </p>
             </div>
           </FadeInUp>
@@ -196,7 +192,7 @@ export default function InfosAnniv() {
                 <span className="w-10 h-10 rounded-full flex items-center justify-center text-xl shadow-clay-inset bg-white/70">
                   ❓
                 </span>
-                <span style={{ color: "#E8731A" }}>Questions ?</span>
+                <span style={{ color: "#E8731A" }}>Questions Anniversaires</span>
               </h3>
               <div className="space-y-2">
                 {FAQS.map((f, i) => (

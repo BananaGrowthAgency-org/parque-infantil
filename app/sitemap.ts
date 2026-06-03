@@ -20,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/restauration/infos-utiles`,          lastModified: now, changeFrequency: "monthly", priority: 0.5 },
     { url: `${BASE}/tarifs`,                             lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     { url: `${BASE}/garderie`,                           lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/jeudi-des-nounous`,                  lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/contact`,                            lastModified: now, changeFrequency: "yearly",  priority: 0.6 },
     { url: `${BASE}/mentions-legales`,                   lastModified: now, changeFrequency: "yearly",  priority: 0.2 },
   ];

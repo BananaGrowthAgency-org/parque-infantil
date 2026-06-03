@@ -65,7 +65,7 @@ const localBusinessSchema = {
   paymentAccepted: "Cash, Credit Card",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "ZAC des Hunaudières, Rte du Petit Bel Oeuvre",
+    streetAddress: "284 Route du Petit Bel Œuvre",
     addressLocality: "Ruaudin",
     postalCode: "72230",
     addressCountry: "FR",

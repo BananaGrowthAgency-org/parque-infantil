@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, Fragment } from "react";
+import { ReactNode } from "react";
 import Image from "next/image";
 import Doodle from "./Doodle";
 import Wave from "./Wave";
@@ -130,43 +130,34 @@ function SectionIntro({
 }
 
 /* ── Main component ─────────────────────────────────── */
-export default function Garderie() {
+export default function JeudiNounous() {
   return (
     <>
-      {/* 1. Intro — Un espace de jeu et de découvertes */}
+      {/* 1. Nounous */}
       <SectionIntro
-        title="Un espace de jeu et de découvertes en toute confiance"
-        desc="Besoin de prendre du temps pour vous ? Dès 4 ans, un service garderie vous est proposé. Vos enfants seront sous la surveillance de nos animateurs."
+        title={<>Le rendez-vous mensuel <span style={{ color: "#E8731A" }}>des Nounous</span> 👩‍🍼</>}
+        desc="Nous proposons aux assistantes maternelles un jeudi matin par mois l'accès à notre parc sur un temps qui leur est réservé, au tarif de 6€ par enfant de plus d'un an."
         features={[
-          { icon: "👦", label: "Dès 4 ans",              desc: "Un service garderie pour les enfants dès 4 ans." },
-          { icon: "🛡️", label: "Encadrement assuré",     desc: "Les enfants sont sous la surveillance d'animateurs." },
-          { icon: "🕐", label: "10,00 € l'heure (tarif dégressif)", desc: "Des tarifs dégressifs pour plus de temps et encore plus de plaisir !" },
-          { icon: "🎟️", label: "Entrée incluse",          desc: "L'entrée du parc est comprise dans les tarifs." },
+          { icon: "📅", label: "Un jeudi matin par mois",  desc: "Un moment dédié rien que pour vous et les enfants." },
+          { icon: "👫", label: "De 0 à 12 ans",            desc: "Une activité adaptée à tous les âges pour s'amuser en toute sécurité." },
+          { icon: "🎟️", label: "Tarif",                    desc: "6,00 € par enfant de plus d'un an." },
+          { icon: "🎁", label: "Un temps privilégié",      desc: "Pour jouer, se dépenser et partager de bons moments." },
         ]}
-        tarifBlock={
-          <div className="space-y-3">
-            <div className="rounded-clay bg-purple-50 border border-[#7B35A0]/20 px-4 py-3 space-y-0.5">
-              <p className="font-fredoka font-extrabold text-[#7B35A0] text-sm">Tarifs :</p>
-              <p className="font-nunito text-sm text-gray-700">10,00€ l&apos;heure (tarif dégressif)</p>
-              <p className="font-nunito text-sm text-gray-500">(Renseignements à l&apos;accueil)</p>
-              <p className="font-nunito text-xs text-gray-500 italic">L&apos;entrée du parc est comprise dans les tarifs.</p>
-            </div>
-            <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-fredoka font-bold text-sm shadow-clay-sm" style={{ backgroundColor: "#F0E8FF", color: "#7B35A0" }}>
-              📍 Disponible uniquement sur place
-            </span>
-          </div>
-        }
-        image="/images/garderie-intro.jpg"
-        imageAlt="Enfant jouant à la garderie Ludykid"
-        badge={{ text: "🕐 10,00 € / heure", bg: "#7B35A0" }}
-        bg="#F5EEFF"
-        accent="#7B35A0"
-        iconBg="#F0E8FF"
-        shadow="shadow-clay-purple"
+        cta="Contactez-nous pour plus d'infos !"
+        ctaHref="tel:+33243414869"
+        ctaTone="orange"
+        ctaDotContent={<span className="text-base leading-none">📞</span>}
+        image="/images/img_4094.jpg"
+        imageAlt="Enfants s'amusant à Ludykid lors du jeudi des nounous"
+        badge={{ text: "💛 6,00 € / enfant", bg: "#E8731A" }}
+        bg="#FFF8EC"
+        accent="#E8731A"
+        iconBg="#FFF0E0"
+        shadow="shadow-clay-orange"
         nextBg="#EDFAED"
       />
 
-      {/* 3. Grands */}
+      {/* 2. Grands */}
       <SectionIntro
         title="Un parc de jeux indoor pour les plus grands (4–12 ans)"
         desc="Une aire de jeux intérieure géante pour se défouler : vos enfants grimpent, sautent, courent et relèvent des défis… sans jamais s'ennuyer. Ici, ils dépensent toute leur énergie et ressortent avec des étoiles plein les yeux."
@@ -186,7 +177,7 @@ export default function Garderie() {
         nextBg="#FFF8DB"
       />
 
-      {/* 4. Petits */}
+      {/* 3. Petits */}
       <SectionIntro
         title="Une aire de jeux intérieur pour les petits (1–3 ans)"
         desc="Vos enfants découvrent le parc intérieur, explorent et s'amusent en toute sécurité, à leur rythme… Et vous profitez d'un moment de tranquillité."

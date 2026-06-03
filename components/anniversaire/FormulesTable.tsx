@@ -72,7 +72,7 @@ const ROWS: { label: string; vals: string[] }[] = [
       "✕",
     ],
   },
-  { label: "Bol de bonbons", vals: ["✓ 130g / enfants", "✓ 50g / enfants", "✕", "✕"] },
+  { label: "Bonbons", vals: ["✓ Sachet de 130g / enfant", "✓ Bol 50g / enfant", "✕", "✕"] },
   { label: "Photo souvenir", vals: ["✓", "✕", "✕", "✕"] },
   { label: "1 jeton bumper offert / enfant", vals: ["✓", "✕", "✕", "✕"] },
   { label: "1 entrée offerte pour la star de la journée", vals: ["✓", "✕", "✕", "✕"] },

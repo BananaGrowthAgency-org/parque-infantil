@@ -3,40 +3,40 @@
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 
-export default function HeroGarderie() {
+export default function HeroJeudiNounous() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="relative bg-[#F5EEFF]">
+    <section className="relative bg-[#FFF8EC]">
       <div className="relative" style={{ height: "calc(72vh + 64px)", minHeight: "calc(560px + 64px)" }}>
-        {/* Capa imagen — overflow-hidden solo aquí */}
+        {/* Capa imagen */}
         <div className="absolute inset-0 overflow-hidden">
           <Image
-            src="/images/garderie-hero.jpg"
-            alt="Enfant dans la piscine à balles chez Ludykid"
+            src="/images/img_4094.jpg"
+            alt="Jeudi des nounous chez Ludykid Le Mans"
             fill
             priority
             className="object-cover"
-            style={{ objectPosition: "center 15%" }}
+            style={{ objectPosition: "center 30%" }}
             sizes="100vw"
           />
           <div
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.25) 55%, rgba(255,248,236,0) 100%)",
+                "linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.25) 55%, rgba(245,238,255,0) 100%)",
             }}
           />
           <div
             className="pointer-events-none absolute bottom-0 inset-x-0"
             style={{
               height: "min(200px, 30vh)",
-              background: "linear-gradient(to bottom, rgba(255,248,236,0), #F5EEFF 85%)",
+              background: "linear-gradient(to bottom, rgba(245,238,255,0), #FFF8EC 85%)",
             }}
           />
         </div>
 
-        {/* Capa contenido — sin overflow-hidden */}
+        {/* Capa contenido */}
         <div className="absolute inset-0 pt-16 flex items-center justify-center">
           <div className="text-center px-4 sm:px-6 max-w-3xl w-full">
             <motion.h1
@@ -46,12 +46,12 @@ export default function HeroGarderie() {
               className="font-fredoka text-3xl sm:text-4xl md:text-6xl font-extrabold text-white leading-tight mb-3 sm:mb-4"
               style={{ textShadow: "0 0 6px rgba(0,0,0,0.9), 1px 1px 4px rgba(0,0,0,0.7)" }}
             >
-              Ludykid Le Mans | Garderie enfant parc indoor{" "}
+              Le jeudi des nounous{" "}
               <span
                 className="inline-block px-2 sm:px-3 py-0.5 sm:py-1 rounded-clay bg-lk-yellow text-[#3A2A00] -rotate-2 shadow-clay-yellow"
                 style={{ textShadow: "none" }}
               >
-                dès 4 ans
+                chez Ludykid
               </span>
             </motion.h1>
 
@@ -62,8 +62,8 @@ export default function HeroGarderie() {
               className="font-nunito text-white/90 text-sm sm:text-base md:text-lg leading-relaxed mb-5 sm:mb-8"
               style={{ textShadow: "0 0 5px rgba(0,0,0,0.8), 1px 1px 3px rgba(0,0,0,0.6)" }}
             >
-              À la recherche d&apos;une garderie au Mans&nbsp;? Confiez votre enfant dès&nbsp;4&nbsp;ans
-              à un parc indoor sécurisé avec jeux, activités ludiques et animateurs.
+              Un jeudi matin par mois réservé aux assistantes maternelles et leurs enfants.
+              Jeux, découvertes et partage dans un espace sécurisé au Mans.
             </motion.p>
 
             <motion.div
@@ -71,8 +71,8 @@ export default function HeroGarderie() {
               animate={reduce ? undefined : { opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.28, ease: "easeOut" }}
             >
-              <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-fredoka font-bold text-white text-sm shadow-clay-sm animate-float" style={{ backgroundColor: "#7B35A0" }}>
-                📍 Disponible uniquement sur place
+              <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-fredoka font-bold text-white text-sm shadow-clay-sm animate-float" style={{ backgroundColor: "#E8731A" }}>
+                💛 6,00 € / enfant
               </span>
             </motion.div>
           </div>

@@ -10,6 +10,7 @@ const ACTIVITE_ITEMS = [
   { label: "Accrobranche",       href: "/accrobranche-le-mans",   hover: "hover:text-lk-yellow", hoverBg: "hover:bg-[#FFF9E0]", active: "text-lk-yellow", softBg: "#FFF9E0" },
   { label: "Laser Game",         href: "/laser-game-le-mans",     hover: "hover:text-lk-purple", hoverBg: "hover:bg-[#F5EEFF]", active: "text-lk-purple", softBg: "#F5EEFF" },
   { label: "Trampoline Parc",    href: "/trampoline-park-le-mans",hover: "hover:text-lk-orange", hoverBg: "hover:bg-[#FFEFE2]", active: "text-lk-orange", softBg: "#FFEFE2" },
+  { label: "Garderie",           href: "/garderie",               hover: "hover:text-lk-purple", hoverBg: "hover:bg-[#F5EEFF]", active: "text-lk-purple", softBg: "#F5EEFF" },
 ];
 
 const PHONE_COLORS: Record<string, { bg: string; icon: string }> = {
@@ -26,19 +27,20 @@ const PHONE_COLORS: Record<string, { bg: string; icon: string }> = {
   "/restauration/infos-utiles":      { bg: "#E8F0FF", icon: "#1877F2" },
   "/restauration":    { bg: "#E8F7E8", icon: "#2E9E2E" },
   "/tarifs":          { bg: "#FFF8CC", icon: "#B8940A" },
-  "/garderie":        { bg: "#FFF3E6", icon: "#E8731A" },
-  "/contact":         { bg: "#F5EEFF", icon: "#7B35A0" },
+  "/garderie":           { bg: "#F5EEFF", icon: "#7B35A0" },
+  "/jeudi-des-nounous": { bg: "#FFF3E6", icon: "#E8731A" },
+  "/contact":           { bg: "#F5EEFF", icon: "#7B35A0" },
 };
 
 const CLAY_SCROLLED =
   "top-9 left-3 right-3 rounded-2xl bg-white shadow-clay md:top-12 md:left-3 md:right-3 lg:left-6 lg:right-6 md:rounded-full";
 
 const links = [
-  { label: "Anniversaire",     href: "/anniversaire", hover: "hover:text-lk-purple", active: "text-lk-purple", softBg: "#F5EEFF" },
-  { label: "Restauration",     href: "/restauration", hover: "hover:text-lk-green",  active: "text-lk-green",  softBg: "#E8F7E8" },
-  { label: "Tarifs & Horaires",href: "/tarifs",       hover: "hover:text-lk-yellow", active: "text-lk-yellow", softBg: "#FFF8CC" },
-  { label: "Garderie",         href: "/garderie",     hover: "hover:text-lk-orange", active: "text-lk-orange", softBg: "#FFEFE2" },
-  { label: "Contact",          href: "/contact",      hover: "hover:text-lk-purple", active: "text-lk-purple", softBg: "#F5EEFF" },
+  { label: "Anniversaire",       href: "/anniversaire",       hover: "hover:text-lk-purple", active: "text-lk-purple", softBg: "#F5EEFF" },
+  { label: "Restauration",       href: "/restauration",       hover: "hover:text-lk-green",  active: "text-lk-green",  softBg: "#E8F7E8" },
+  { label: "Tarifs & Horaires",  href: "/tarifs",             hover: "hover:text-lk-yellow", active: "text-lk-yellow", softBg: "#FFF8CC" },
+  { label: "Jeudi des Nounous",  href: "/jeudi-des-nounous",  hover: "hover:text-lk-orange", active: "text-lk-orange", softBg: "#FFEFE2" },
+  { label: "Contact",            href: "/contact",            hover: "hover:text-lk-purple", active: "text-lk-purple", softBg: "#F5EEFF" },
 ];
 
 export default function Navbar() {
@@ -99,18 +101,18 @@ export default function Navbar() {
 
   return (
     <nav className={navClass}>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-18 py-2">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center h-18 py-2">
           <a href="/" aria-label="Accueil Ludykid"><Logo size="sm" /></a>
 
-          {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-4">
+          {/* Desktop nav — links centrados, botones a la derecha */}
+          <div className="hidden md:flex flex-1 items-center justify-center gap-3">
 
             {/* Activité dropdown */}
             <div className="relative" ref={dropRef}>
               <button
                 onClick={() => setActiviteOpen((v) => !v)}
-                className={`font-fredoka font-semibold text-base transition-colors px-3 py-1.5 rounded-full flex items-center gap-1 ${
+                className={`font-fredoka font-semibold text-base transition-colors px-3 py-1.5 rounded-full flex items-center gap-1 whitespace-nowrap ${
                   activiteIsActive || activiteOpen
                     ? "text-lk-orange bg-[#FFEFE2]"
                     : "text-gray-600 hover:text-lk-orange"
@@ -153,7 +155,7 @@ export default function Navbar() {
                   key={link.label}
                   href={link.href}
                   aria-current={active ? "page" : undefined}
-                  className={`font-fredoka font-semibold text-base transition-colors px-3 py-1.5 rounded-full ${
+                  className={`font-fredoka font-semibold text-base transition-colors px-3 py-1.5 rounded-full whitespace-nowrap ${
                     active ? link.active : `text-gray-600 ${link.hover}`
                   }`}
                   style={active ? { backgroundColor: link.softBg } : undefined}
@@ -162,7 +164,10 @@ export default function Navbar() {
                 </a>
               );
             })}
+          </div>
 
+          {/* Botones acción — siempre a la derecha */}
+          <div className="hidden md:flex items-center gap-3 ml-auto">
             <a
               href="tel:+33243414869"
               className="flex items-center p-2.5 rounded-full shadow-clay-inset transition-all duration-300 hover:scale-105 hover:-translate-y-0.5"
