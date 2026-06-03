@@ -12,7 +12,7 @@ const ACCENTS = ["#E8731A", "#2E9E2E", "#B8940A", "#7B35A0"];
 
 const FEATURES = [
   { icon: "/images/iconos/enfants.png",                 label: "De 0 à 12 ans",          desc: "adapté à tous les âges" },
-  { icon: "/images/iconos/medaille.png",                label: "1 jeudi / mois",          desc: "matinée dédiée" },
+  { icon: "/images/iconos/calendar-icon-orange.png",    label: "1 jeudi / mois",          desc: "matinée dédiée", size: 76 },
   { icon: "/images/iconos/garderie-icon-activites.png", label: "Activités encadrées",     desc: "jeux, découvertes" },
   { icon: "/images/iconos/garderie-icon-entree.png",    label: "6,00 € / enfant",         desc: "tarif spécial nounous" },
 ];
@@ -41,23 +41,27 @@ export default function JeudiNounousPage() {
           {FEATURES.map((f, i) => (
             <FadeInUp key={f.label} y={20} delay={0.08 + i * 0.08} className="h-full">
               <div className="h-full rounded-clay-lg border-[3px] bg-white shadow-clay p-4 text-center space-y-1.5" style={{ borderColor: ACCENTS[i] }}>
-                <div
-                  aria-hidden="true"
-                  className="mx-auto"
-                  style={{
-                    width: 64,
-                    height: 64,
-                    backgroundColor: ORANGE,
-                    WebkitMaskImage: `url(${f.icon})`,
-                    maskImage: `url(${f.icon})`,
-                    WebkitMaskRepeat: "no-repeat",
-                    maskRepeat: "no-repeat",
-                    WebkitMaskPosition: "center",
-                    maskPosition: "center",
-                    WebkitMaskSize: "contain",
-                    maskSize: "contain",
-                  }}
-                />
+                {(f as { icon: string; label: string; desc: string; raw?: boolean }).raw ? (
+                  <img src={f.icon} alt="" aria-hidden="true" className="mx-auto" style={{ width: 72, height: 72, objectFit: "contain" }} />
+                ) : (
+                  <div
+                    aria-hidden="true"
+                    className="mx-auto"
+                    style={{
+                      width: (f as { size?: number }).size ?? 64,
+                      height: (f as { size?: number }).size ?? 64,
+                      backgroundColor: ORANGE,
+                      WebkitMaskImage: `url(${f.icon})`,
+                      maskImage: `url(${f.icon})`,
+                      WebkitMaskRepeat: "no-repeat",
+                      maskRepeat: "no-repeat",
+                      WebkitMaskPosition: "center",
+                      maskPosition: "center",
+                      WebkitMaskSize: "contain",
+                      maskSize: "contain",
+                    }}
+                  />
+                )}
                 <p className="font-fredoka font-extrabold text-sm" style={{ color: ORANGE }}>{f.label}</p>
                 <p className="font-nunito text-gray-400 text-xs">{f.desc}</p>
               </div>

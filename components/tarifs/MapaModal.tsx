@@ -2,10 +2,7 @@
 
 import { useState } from "react";
 
-const IMG_STYLE: React.CSSProperties = {
-  imageRendering: "crisp-edges",
-  filter: "contrast(1.18) saturate(1.25) brightness(1.04)",
-};
+const IMG_STYLE: React.CSSProperties = {};
 
 export default function MapaModal() {
   const [open, setOpen] = useState(false);
@@ -21,7 +18,7 @@ export default function MapaModal() {
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/images/mapa-ludykid.png"
+          src="/images/mapa-ludykid.jpg"
           alt="Carte du quartier Ludykid"
           style={{ width: 160, height: 120, objectFit: "cover", ...IMG_STYLE }}
         />
@@ -30,16 +27,16 @@ export default function MapaModal() {
       {/* Modal / lightbox */}
       {open && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-black/60 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-6 bg-black/60 backdrop-blur-sm"
           onClick={() => setOpen(false)}
         >
           <div
-            className="relative rounded-clay-lg overflow-hidden shadow-clay-yellow border-4 border-lk-yellow bg-white max-w-xl w-full"
+            className="relative rounded-clay-lg overflow-hidden shadow-clay-yellow border-4 border-lk-yellow bg-white max-w-4xl w-full"
             onClick={(e) => e.stopPropagation()}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/mapa-ludykid.png"
+              src="/images/mapa-ludykid.jpg"
               alt="Plan d'accès Ludykid"
               className="w-full h-auto"
               style={IMG_STYLE}

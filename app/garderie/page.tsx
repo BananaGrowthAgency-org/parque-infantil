@@ -12,7 +12,7 @@ const ACCENTS = ["#7B35A0", "#E8731A", "#2E9E2E", "#FFD600"];
 
 const FEATURES = [
   { icon: "/images/iconos/enfants.png",                  label: "Dès 4 ans",            desc: "adapté aux tout-petits" },
-  { icon: "/images/iconos/medaille.png",                 label: "Animateurs qualifiés", desc: "surveillance permanente" },
+  { icon: "/images/iconos/animateur-icon.png",            label: "Animateurs qualifiés", desc: "surveillance permanente" },
   { icon: "/images/iconos/garderie-icon-activites.png",  label: "Activités encadrées",  desc: "jeux, jeux de société" },
   { icon: "/images/iconos/garderie-icon-entree.png",     label: "Entrée incluse",       desc: "accès au parc compris" },
 ];
@@ -45,8 +45,8 @@ export default function GarderiePage() {
                   aria-hidden="true"
                   className="mx-auto"
                   style={{
-                    width: 64,
-                    height: 64,
+                    width: (f as { size?: number }).size ?? 64,
+                    height: (f as { size?: number }).size ?? 64,
                     backgroundColor: PURPLE,
                     WebkitMaskImage: `url(${f.icon})`,
                     maskImage: `url(${f.icon})`,
