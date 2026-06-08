@@ -17,8 +17,16 @@ export default function FadeInOnMount({
   duration = 0.55,
   className = "",
 }: FadeInOnMountProps) {
+  const [ready, setReady] = useState(false);
   const [mounted, setMounted] = useState(false);
-  useEffect(() => { setMounted(true); }, []);
+
+  useEffect(() => {
+    setReady(true);
+    requestAnimationFrame(() => setMounted(true));
+  }, []);
+
+  // SSR: fully visible
+  if (!ready) return <div className={className}>{children}</div>;
 
   return (
     <div

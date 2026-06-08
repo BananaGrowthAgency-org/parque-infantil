@@ -20,13 +20,15 @@ export default function FadeInUp({
   once = true,
 }: FadeInUpProps) {
   const ref = useRef<HTMLDivElement>(null);
+  // SSR-safe: starts visible, animates only after hydration
+  const [ready, setReady] = useState(false);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    setReady(true);
     const el = ref.current;
     if (!el) { setVisible(true); return; }
 
-    // Ya en viewport → visible de inmediato
     const rect = el.getBoundingClientRect();
     if (rect.top < window.innerHeight + 50) {
       setVisible(true);
@@ -45,6 +47,11 @@ export default function FadeInUp({
     observer.observe(el);
     return () => observer.disconnect();
   }, [once]);
+
+  // SSR + before hydration: fully visible, no animation
+  if (!ready) {
+    return <div className={className}>{children}</div>;
+  }
 
   return (
     <div
