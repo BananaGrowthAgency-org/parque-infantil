@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 import { ReactNode, useEffect, useRef, useState } from "react";
 
 type FadeInUpProps = {
@@ -63,7 +63,7 @@ export default function FadeInUp({
   }
 
   return (
-    <motion.div
+    <m.div
       ref={ref}
       className={className}
       initial={{ opacity: 0, y }}
@@ -71,6 +71,6 @@ export default function FadeInUp({
       transition={{ duration, delay, ease: [0.34, 1.56, 0.64, 1] }}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }

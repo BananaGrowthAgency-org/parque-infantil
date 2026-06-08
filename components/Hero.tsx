@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 import ClayButton from "./ui/ClayButton";
 
 export default function Hero() {
@@ -44,7 +44,7 @@ export default function Hero() {
         <div className="absolute inset-0 flex items-center justify-center pt-8 sm:pt-0">
           <div className="text-center px-4 sm:px-6 w-full max-w-4xl">
 
-            <motion.h1
+            <m.h1
               initial={reduce ? false : { opacity: 0, y: 16 }}
               animate={reduce ? undefined : { opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1, ease: [0.34, 1.56, 0.64, 1] }}
@@ -59,9 +59,9 @@ export default function Hero() {
                 enfants
               </span>{" "}
               (1–12 ans)
-            </motion.h1>
+            </m.h1>
 
-            <motion.p
+            <m.p
               initial={reduce ? false : { opacity: 0, y: 12 }}
               animate={reduce ? undefined : { opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.25, ease: "easeOut" }}
@@ -69,9 +69,9 @@ export default function Hero() {
               style={{ textShadow: "0 0 5px rgba(0,0,0,0.8), 1px 1px 3px rgba(0,0,0,0.6)" }}
             >
               Plaine de jeux intérieure au Mans : Ludykid accueille les enfants de 1 à 12 ans avec 1200 m² d&apos;activités, anniversaires clé en main et espace restauration
-            </motion.p>
+            </m.p>
 
-            <motion.div
+            <m.div
               initial={reduce ? false : { opacity: 0, y: 16 }}
               animate={reduce ? undefined : { opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.35, ease: [0.34, 1.56, 0.64, 1] }}
@@ -90,7 +90,7 @@ export default function Hero() {
               >
                 Billetterie
               </ClayButton>
-            </motion.div>
+            </m.div>
 
           </div>
         </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 
 export default function HeroGarderie() {
   const reduce = useReducedMotion();
@@ -39,7 +39,7 @@ export default function HeroGarderie() {
         {/* Capa contenido — sin overflow-hidden */}
         <div className="absolute inset-0 pt-16 flex items-center justify-center">
           <div className="text-center px-4 sm:px-6 max-w-3xl w-full">
-            <motion.h1
+            <m.h1
               initial={reduce ? false : { opacity: 0, y: 24 }}
               animate={reduce ? undefined : { opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.34, 1.56, 0.64, 1] }}
@@ -53,9 +53,9 @@ export default function HeroGarderie() {
               >
                 dès 4 ans
               </span>
-            </motion.h1>
+            </m.h1>
 
-            <motion.p
+            <m.p
               initial={reduce ? false : { opacity: 0, y: 16 }}
               animate={reduce ? undefined : { opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
@@ -64,9 +64,9 @@ export default function HeroGarderie() {
             >
               À la recherche d&apos;une garderie au Mans&nbsp;? Confiez votre enfant dès&nbsp;4&nbsp;ans
               à un parc indoor sécurisé avec jeux, activités ludiques et animateurs.
-            </motion.p>
+            </m.p>
 
-            <motion.div
+            <m.div
               initial={reduce ? false : { opacity: 0, y: 12 }}
               animate={reduce ? undefined : { opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.28, ease: "easeOut" }}
@@ -74,7 +74,7 @@ export default function HeroGarderie() {
               <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-fredoka font-bold text-white text-sm shadow-clay-sm animate-float" style={{ backgroundColor: "#7B35A0" }}>
                 📍 Disponible uniquement sur place
               </span>
-            </motion.div>
+            </m.div>
           </div>
         </div>
       </div>

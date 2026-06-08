@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 
 export default function HeroLaser() {
   const reduce = useReducedMotion();
@@ -41,7 +41,7 @@ export default function HeroLaser() {
         {/* Capa contenido — sin overflow-hidden para que nunca se recorte */}
         <div className="absolute inset-0 flex items-start justify-center pt-10 pb-0 sm:items-center sm:py-0">
           <div className="text-center px-4 sm:px-6 max-w-3xl w-full">
-            <motion.h1
+            <m.h1
               initial={reduce ? false : { opacity: 0, y: 24 }}
               animate={reduce ? undefined : { opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.34, 1.56, 0.64, 1] }}
@@ -53,9 +53,9 @@ export default function HeroLaser() {
                 Laser Game
               </span>{" "}
               Enfant Le Mans
-            </motion.h1>
+            </m.h1>
 
-            <motion.p
+            <m.p
               initial={reduce ? false : { opacity: 0, y: 16 }}
               animate={reduce ? undefined : { opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.15, ease: [0.34, 1.56, 0.64, 1] }}
@@ -63,9 +63,9 @@ export default function HeroLaser() {
               style={{ textShadow: "0 0 5px rgba(0,0,0,0.8), 1px 1px 3px rgba(0,0,0,0.6)" }}
             >
               À la recherche d&apos;un laser game pour votre enfant au Mans ? Offrez-lui une activité ludique qui développe esprit d&apos;équipe et coordination chez Ludykid.
-            </motion.p>
+            </m.p>
 
-            <motion.div
+            <m.div
               initial={reduce ? false : { opacity: 0, y: 16 }}
               animate={reduce ? undefined : { opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3, ease: [0.34, 1.56, 0.64, 1] }}
@@ -74,7 +74,7 @@ export default function HeroLaser() {
               <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-fredoka font-bold text-white text-sm shadow-clay-sm animate-float" style={{ backgroundColor: "#7B35A0" }}>
                 📍 Disponible uniquement sur place
               </span>
-            </motion.div>
+            </m.div>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 
 export default function HeroJeudiNounous() {
   const reduce = useReducedMotion();
@@ -39,7 +39,7 @@ export default function HeroJeudiNounous() {
         {/* Capa contenido */}
         <div className="absolute inset-0 pt-16 flex items-center justify-center">
           <div className="text-center px-4 sm:px-6 max-w-3xl w-full">
-            <motion.h1
+            <m.h1
               initial={reduce ? false : { opacity: 0, y: 24 }}
               animate={reduce ? undefined : { opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.34, 1.56, 0.64, 1] }}
@@ -53,9 +53,9 @@ export default function HeroJeudiNounous() {
               >
                 chez Ludykid
               </span>
-            </motion.h1>
+            </m.h1>
 
-            <motion.p
+            <m.p
               initial={reduce ? false : { opacity: 0, y: 16 }}
               animate={reduce ? undefined : { opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
@@ -64,9 +64,9 @@ export default function HeroJeudiNounous() {
             >
               Un jeudi matin par mois réservé aux assistantes maternelles et leurs enfants.
               Jeux, découvertes et partage dans un espace sécurisé au Mans.
-            </motion.p>
+            </m.p>
 
-            <motion.div
+            <m.div
               initial={reduce ? false : { opacity: 0, y: 12 }}
               animate={reduce ? undefined : { opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.28, ease: "easeOut" }}
@@ -74,7 +74,7 @@ export default function HeroJeudiNounous() {
               <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-fredoka font-bold text-white text-sm shadow-clay-sm animate-float" style={{ backgroundColor: "#E8731A" }}>
                 💛 6,00 € / enfant
               </span>
-            </motion.div>
+            </m.div>
           </div>
         </div>
       </div>

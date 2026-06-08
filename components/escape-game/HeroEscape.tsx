@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 import ClayButton from "../ui/ClayButton";
 
 export default function HeroEscape() {
@@ -33,7 +33,7 @@ export default function HeroEscape() {
         {/* Capa contenido — sin overflow-hidden para que nunca se recorte */}
         <div className="absolute inset-0 flex items-center justify-center py-10 sm:py-0">
           <div className="text-center px-4 sm:px-6 max-w-3xl w-full">
-            <motion.h1
+            <m.h1
               initial={reduce ? false : { opacity: 0, y: 24 }}
               animate={reduce ? undefined : { opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.34, 1.56, 0.64, 1] }}
@@ -45,9 +45,9 @@ export default function HeroEscape() {
                 Escape Game
               </span>{" "}
               Enfant Le Mans
-            </motion.h1>
+            </m.h1>
 
-            <motion.p
+            <m.p
               initial={reduce ? false : { opacity: 0, y: 16 }}
               animate={reduce ? undefined : { opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.15, ease: [0.34, 1.56, 0.64, 1] }}
@@ -55,9 +55,9 @@ export default function HeroEscape() {
               style={{ textShadow: "0 0 5px rgba(0,0,0,0.8), 1px 1px 3px rgba(0,0,0,0.6)" }}
             >
               À la recherche d&apos;un escape game pour votre enfant au Mans ? Offrez-lui une aventure ludique en réalité augmentée qui stimule logique et esprit d&apos;équipe.
-            </motion.p>
+            </m.p>
 
-            <motion.div
+            <m.div
               initial={reduce ? false : { opacity: 0, y: 16 }}
               animate={reduce ? undefined : { opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3, ease: [0.34, 1.56, 0.64, 1] }}
@@ -69,7 +69,7 @@ export default function HeroEscape() {
               <ClayButton href="https://ludykid.qweekle.com/shop/ludykid/ticketing?lang=fr" tone="purple" size="lg" className="w-full sm:w-auto" target="_blank" rel="noopener noreferrer">
                 Billetterie
               </ClayButton>
-            </motion.div>
+            </m.div>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 import ClayButton from "../ui/ClayButton";
 
 export default function HeroAnniversaire() {
@@ -45,7 +45,7 @@ export default function HeroAnniversaire() {
         {/* Capa contenido — sin overflow-hidden para que nunca se recorte */}
         <div className="absolute inset-0 flex items-center justify-center pt-8 sm:pt-0">
           <div className="text-center px-4 sm:px-6 max-w-3xl w-full">
-            <motion.h1
+            <m.h1
               initial={reduce ? false : { opacity: 0, y: 24 }}
               animate={reduce ? undefined : { opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.34, 1.56, 0.64, 1] }}
@@ -56,8 +56,8 @@ export default function HeroAnniversaire() {
               <span className="inline-block px-2 sm:px-3 py-0.5 sm:py-1 rounded-clay bg-lk-yellow text-[#3A2A00] -rotate-2 shadow-clay-yellow" style={{ textShadow: "none" }}>
                 10,50€
               </span>
-            </motion.h1>
-            <motion.p
+            </m.h1>
+            <m.p
               initial={reduce ? false : { opacity: 0, y: 12 }}
               animate={reduce ? undefined : { opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
@@ -65,8 +65,8 @@ export default function HeroAnniversaire() {
               style={{ textShadow: "0 0 5px rgba(0,0,0,0.8), 1px 1px 3px rgba(0,0,0,0.6)" }}
             >
               Organisez un anniversaire enfant au Mans sans stress. Aire de jeux intérieure couverte. Formules clés en main. Gâteau &amp; fun garantis.
-            </motion.p>
-            <motion.div
+            </m.p>
+            <m.div
               initial={reduce ? false : { opacity: 0, y: 16 }}
               animate={reduce ? undefined : { opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.32, ease: [0.34, 1.56, 0.64, 1] }}
@@ -74,7 +74,7 @@ export default function HeroAnniversaire() {
               <ClayButton href="#formules" tone="purple" size="lg" className="w-full sm:w-auto">
                 Choisissez votre formule
               </ClayButton>
-            </motion.div>
+            </m.div>
           </div>
         </div>
       </div>
