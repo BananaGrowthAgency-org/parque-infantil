@@ -11,10 +11,38 @@ export default function ContactForm() {
   const [email, setEmail]   = useState("");
   const [message, setMessage] = useState("");
   const [sent, setSent]     = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError]   = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSent(true);
+    setLoading(true);
+    setError(false);
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: "db5cdb29-3523-43cc-a37b-2383c86c90a5",
+          to: "ludykidparc@gmail.com",
+          name: nom,
+          email,
+          message,
+          subject: `Nouveau message de ${nom} — Ludykid`,
+          replyto: email,
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setSent(true);
+      } else {
+        setError(true);
+      }
+    } catch {
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -102,9 +130,14 @@ export default function ContactForm() {
               />
             </div>
 
+            {error && (
+              <p className="font-nunito text-red-500 text-sm text-center">
+                Une erreur est survenue. Veuillez réessayer ou nous appeler directement.
+              </p>
+            )}
             <div className="flex justify-end">
-              <ClayButton type="submit" tone="purple" size="md" className="w-full sm:w-auto">
-                Valider ✉️
+              <ClayButton type="submit" tone="purple" size="md" className="w-full sm:w-auto" disabled={loading}>
+                {loading ? "Envoi en cours…" : "Valider ✉️"}
               </ClayButton>
             </div>
           </form>
