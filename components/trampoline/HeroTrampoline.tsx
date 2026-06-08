@@ -1,11 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { m, useReducedMotion } from "framer-motion";
 import ClayButton from "../ui/ClayButton";
 
 export default function HeroTrampoline() {
-  const reduce = useReducedMotion();
 
   return (
     <section className="relative pt-16">
@@ -34,11 +32,8 @@ export default function HeroTrampoline() {
         {/* Capa contenido — sin overflow-hidden para que nunca se recorte */}
         <div className="absolute inset-0 flex items-center justify-center py-10 sm:py-0">
           <div className="text-center px-4 sm:px-6 max-w-3xl w-full">
-            <m.h1
-              initial={reduce ? false : { opacity: 0, y: 24 }}
-              animate={reduce ? undefined : { opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.34, 1.56, 0.64, 1] }}
-              className="font-fredoka text-3xl sm:text-4xl md:text-6xl font-extrabold text-white leading-tight mb-3 sm:mb-5"
+            <h1
+              className="hero-anim-1 font-fredoka text-3xl sm:text-4xl md:text-6xl font-extrabold text-white leading-tight mb-3 sm:mb-5"
               style={{ textShadow: "0 0 6px rgba(0,0,0,0.9), 1px 1px 4px rgba(0,0,0,0.7)" }}
             >
               Ludykid | Espace{" "}
@@ -46,23 +41,17 @@ export default function HeroTrampoline() {
                 Trampoline
               </span>{" "}
               Enfant Le Mans
-            </m.h1>
+            </h1>
 
-            <m.p
-              initial={reduce ? false : { opacity: 0, y: 16 }}
-              animate={reduce ? undefined : { opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.15, ease: [0.34, 1.56, 0.64, 1] }}
-              className="font-nunito text-white/95 text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-5 sm:mb-7 leading-relaxed"
+            <p
+              className="hero-anim-2 font-nunito text-white/95 text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-5 sm:mb-7 leading-relaxed"
               style={{ textShadow: "0 0 5px rgba(0,0,0,0.8), 1px 1px 3px rgba(0,0,0,0.6)" }}
             >
               À la recherche d&apos;un espace trampoline pour votre enfant au Mans ? Offrez-lui un espace ludique et sécurisé pour se dépenser et s&apos;amuser chez Ludykid.
-            </m.p>
+            </p>
 
-            <m.div
-              initial={reduce ? false : { opacity: 0, y: 16 }}
-              animate={reduce ? undefined : { opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.3, ease: [0.34, 1.56, 0.64, 1] }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-3"
+            <div
+              className="hero-anim-3 flex flex-col sm:flex-row items-center justify-center gap-3"
             >
               <ClayButton href="https://ludykid.qweekle.com/shop/ludykid/anniversaires?lang=fr" tone="orange" size="lg" className="w-full sm:w-auto" target="_blank" rel="noopener noreferrer">
                 Réserver votre anniversaire
@@ -70,7 +59,7 @@ export default function HeroTrampoline() {
               <ClayButton href="https://ludykid.qweekle.com/shop/ludykid/ticketing?lang=fr" tone="purple" size="lg" className="w-full sm:w-auto" target="_blank" rel="noopener noreferrer">
                 Billetterie
               </ClayButton>
-            </m.div>
+            </div>
           </div>
         </div>
       </div>

@@ -7,6 +7,18 @@
   h1, h2, h3, h4, h5 { font-family: var(--font-fredoka), sans-serif; }
 }
 
+/* Hero animations — CSS puro, sin JS */
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-anim-1 { animation: heroFadeUp 0.8s cubic-bezier(0.34,1.56,0.64,1) both; }
+.hero-anim-2 { animation: heroFadeUp 0.7s cubic-bezier(0.34,1.56,0.64,1) 0.15s both; }
+.hero-anim-3 { animation: heroFadeUp 0.6s cubic-bezier(0.34,1.56,0.64,1) 0.28s both; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-anim-1, .hero-anim-2, .hero-anim-3 { animation: none; }
+}
+
 /* Elfsight Google Reviews — cards más rectangulares (home + anniversaire) */
 .elfsight-app-82bae877-7f5c-4732-ac4f-3cea8aa6ed5a [class*="ReviewItem"],
 .elfsight-app-82bae877-7f5c-4732-ac4f-3cea8aa6ed5a [class*="Review__"],
