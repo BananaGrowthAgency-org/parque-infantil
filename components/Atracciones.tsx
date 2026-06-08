@@ -68,7 +68,7 @@ const secciones = [
       { icon: "👀", label: "Vue sur les enfants", desc: "depuis la cafétéria" },
     ],
     precio: "",
-    imagen: "/images/home/bar.png",
+    imagen: "/images/home/bar.jpg",
     alt: "Espace restauration Ludykid",
     invertida: true,
     color: "#FFD600",

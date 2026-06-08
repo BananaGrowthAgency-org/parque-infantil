@@ -20,7 +20,7 @@ const photos: Slide[] = [
   { type: "video", src: "/images/restauration/VID_20260404_120342.mp4", alt: "Visite du parc" },
   { src: "/images/home/seccion3.jpg",     alt: "Trampolines" },
   { src: "/images/tobogan-tubo.jpg", alt: "Piste de bouées" },
-  { src: "/images/home/cumple.png",       alt: "Fête d'anniversaire" },
+  { src: "/images/home/cumple.jpg",       alt: "Fête d'anniversaire" },
   { src: "/images/escape-game/107904131_565022047520507_1011703251537892967_n.jpg", alt: "Escape Game" },
   { src: "/images/logo-foto.jpg",    alt: "Chasse aux trésors" },
   { src: "/images/home/trampoline.jpg", alt: "Parc de trampolines" },

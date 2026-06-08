@@ -13,7 +13,7 @@ export const metadata = {
     title: "Restauration – Ludy'cafet · Ludykid Le Mans",
     description: "Découvrez Ludy'cafet : boissons fraîches, boissons chaudes, plaisirs sucrés et plaisirs salés à déguster pendant votre visite chez Ludykid.",
     url: "https://www.ludykid.com/restauration",
-    images: [{ url: "/images/home/bar.png", alt: "Ludy'cafet – Restauration Ludykid Le Mans" }],
+    images: [{ url: "/images/home/bar.jpg", alt: "Ludy'cafet – Restauration Ludykid Le Mans" }],
   },
   alternates: { canonical: "https://www.ludykid.com/restauration" },
 };

@@ -46,7 +46,7 @@ const ACTIVITIES: Activity[] = [
   {
     title: "Restauration",
     desc: "Une pause gourmande bien méritée pour reprendre des forces entre deux activités !",
-    image: "/images/home/bar.png",
+    image: "/images/home/bar.jpg",
     alt: "Ludy'cafet chez Ludykid",
     href: "/restauration",
     iconSrc: "/images/iconos/icones-services/cafet.png",

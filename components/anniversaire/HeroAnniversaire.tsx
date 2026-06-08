@@ -14,7 +14,7 @@ export default function HeroAnniversaire() {
         <div className="absolute inset-0 overflow-hidden">
           {/* Poster optimizado → LCP rápido en WebP */}
           <Image
-            src="/images/home/cumple.png"
+            src="/images/home/cumple.jpg"
             alt="Anniversaire enfant chez Ludykid"
             fill
             priority

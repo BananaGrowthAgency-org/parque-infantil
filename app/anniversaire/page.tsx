@@ -17,7 +17,7 @@ export const metadata = {
     title: "Ludykid Le Mans | Anniversaire enfant inoubliable dès 10,50€",
     description: "Organisez un anniversaire enfant au Mans sans stress. Aire de jeux intérieure couverte. Formules clés en main. Gâteau & fun garantis.",
     url: "https://www.ludykid.com/anniversaire",
-    images: [{ url: "/images/home/cumple.png", alt: "Anniversaire enfant Ludykid Le Mans" }],
+    images: [{ url: "/images/home/cumple.jpg", alt: "Anniversaire enfant Ludykid Le Mans" }],
   },
   alternates: { canonical: "https://www.ludykid.com/anniversaire" },
 };
