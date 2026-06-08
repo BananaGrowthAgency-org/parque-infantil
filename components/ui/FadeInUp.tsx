@@ -1,5 +1,6 @@
 "use client";
 
+import { motion, useReducedMotion } from "framer-motion";
 import { ReactNode, useEffect, useRef, useState } from "react";
 
 type FadeInUpProps = {
@@ -19,22 +20,30 @@ export default function FadeInUp({
   className = "",
   once = true,
 }: FadeInUpProps) {
+  const prefersReduced = useReducedMotion();
   const ref = useRef<HTMLDivElement>(null);
-  // SSR-safe: starts visible, animates only after hydration
-  const [ready, setReady] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const [visible, setVisible] = useState(false);
 
+  // Paso 1: marcar montado (render separado del paso 2)
   useEffect(() => {
-    setReady(true);
+    setMounted(true);
+  }, []);
+
+  // Paso 2: solo tras el montado, observar el motion.div real
+  useEffect(() => {
+    if (!mounted) return;
     const el = ref.current;
     if (!el) { setVisible(true); return; }
 
+    // Ya en viewport al cargar → visible de inmediato (la animación parte de initial)
     const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight + 50) {
+    if (rect.top < window.innerHeight + 50 && rect.bottom > -50) {
       setVisible(true);
       return;
     }
 
+    // Fuera del viewport → observar scroll
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
@@ -46,24 +55,22 @@ export default function FadeInUp({
     );
     observer.observe(el);
     return () => observer.disconnect();
-  }, [once]);
+  }, [mounted, once]);
 
-  // SSR + before hydration: fully visible, no animation
-  if (!ready) {
-    return <div className={className}>{children}</div>;
+  // SSR / reduced motion: div visible sin inline-style (sin riesgo de contenido invisible)
+  if (!mounted || prefersReduced) {
+    return <div ref={ref} className={className}>{children}</div>;
   }
 
   return (
-    <div
+    <motion.div
       ref={ref}
       className={className}
-      style={{
-        opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0)" : `translateY(${y}px)`,
-        transition: `opacity ${duration}s cubic-bezier(0.34,1.56,0.64,1) ${delay}s, transform ${duration}s cubic-bezier(0.34,1.56,0.64,1) ${delay}s`,
-      }}
+      initial={{ opacity: 0, y }}
+      animate={visible ? { opacity: 1, y: 0 } : { opacity: 0, y }}
+      transition={{ duration, delay, ease: [0.34, 1.56, 0.64, 1] }}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }

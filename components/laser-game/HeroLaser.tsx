@@ -1,8 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import { motion, useReducedMotion } from "framer-motion";
 
 export default function HeroLaser() {
+  const reduce = useReducedMotion();
 
   return (
     <section id="hero-laser" className="relative pt-16 bg-[#F5EEFF]">
@@ -39,8 +41,11 @@ export default function HeroLaser() {
         {/* Capa contenido — sin overflow-hidden para que nunca se recorte */}
         <div className="absolute inset-0 flex items-start justify-center pt-10 pb-0 sm:items-center sm:py-0">
           <div className="text-center px-4 sm:px-6 max-w-3xl w-full">
-            <h1
-              className="hero-anim-1 font-fredoka text-3xl sm:text-4xl md:text-6xl font-extrabold text-white leading-tight mb-3 sm:mb-5"
+            <motion.h1
+              initial={reduce ? false : { opacity: 0, y: 24 }}
+              animate={reduce ? undefined : { opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.34, 1.56, 0.64, 1] }}
+              className="font-fredoka text-3xl sm:text-4xl md:text-6xl font-extrabold text-white leading-tight mb-3 sm:mb-5"
               style={{ textShadow: "0 0 6px rgba(0,0,0,0.9), 1px 1px 4px rgba(0,0,0,0.7)" }}
             >
               Ludykid |{" "}
@@ -48,22 +53,28 @@ export default function HeroLaser() {
                 Laser Game
               </span>{" "}
               Enfant Le Mans
-            </h1>
+            </motion.h1>
 
-            <p
-              className="hero-anim-2 font-nunito text-white/95 text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-5 sm:mb-7 leading-relaxed"
+            <motion.p
+              initial={reduce ? false : { opacity: 0, y: 16 }}
+              animate={reduce ? undefined : { opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.15, ease: [0.34, 1.56, 0.64, 1] }}
+              className="font-nunito text-white/95 text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-5 sm:mb-7 leading-relaxed"
               style={{ textShadow: "0 0 5px rgba(0,0,0,0.8), 1px 1px 3px rgba(0,0,0,0.6)" }}
             >
               À la recherche d&apos;un laser game pour votre enfant au Mans ? Offrez-lui une activité ludique qui développe esprit d&apos;équipe et coordination chez Ludykid.
-            </p>
+            </motion.p>
 
-            <div
-              className="hero-anim-3 flex items-center justify-center"
+            <motion.div
+              initial={reduce ? false : { opacity: 0, y: 16 }}
+              animate={reduce ? undefined : { opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3, ease: [0.34, 1.56, 0.64, 1] }}
+              className="flex items-center justify-center"
             >
               <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-fredoka font-bold text-white text-sm shadow-clay-sm animate-float" style={{ backgroundColor: "#7B35A0" }}>
                 📍 Disponible uniquement sur place
               </span>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

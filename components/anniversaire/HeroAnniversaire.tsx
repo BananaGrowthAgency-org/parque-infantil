@@ -1,9 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import { motion, useReducedMotion } from "framer-motion";
 import ClayButton from "../ui/ClayButton";
 
 export default function HeroAnniversaire() {
+  const reduce = useReducedMotion();
 
   return (
     <section className="relative pt-16 bg-[#FFF8EC]">
@@ -43,27 +45,36 @@ export default function HeroAnniversaire() {
         {/* Capa contenido — sin overflow-hidden para que nunca se recorte */}
         <div className="absolute inset-0 flex items-center justify-center pt-8 sm:pt-0">
           <div className="text-center px-4 sm:px-6 max-w-3xl w-full">
-            <h1
-              className="hero-anim-1 font-fredoka text-3xl sm:text-4xl md:text-6xl font-extrabold text-white leading-tight mb-3 sm:mb-4"
+            <motion.h1
+              initial={reduce ? false : { opacity: 0, y: 24 }}
+              animate={reduce ? undefined : { opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.34, 1.56, 0.64, 1] }}
+              className="font-fredoka text-3xl sm:text-4xl md:text-6xl font-extrabold text-white leading-tight mb-3 sm:mb-4"
               style={{ textShadow: "0 0 6px rgba(0,0,0,0.9), 1px 1px 4px rgba(0,0,0,0.7)" }}
             >
               Ludykid Le Mans | Anniversaire enfant inoubliable dès{" "}
               <span className="inline-block px-2 sm:px-3 py-0.5 sm:py-1 rounded-clay bg-lk-yellow text-[#3A2A00] -rotate-2 shadow-clay-yellow" style={{ textShadow: "none" }}>
                 10,50€
               </span>
-            </h1>
-            <p
-              className="hero-anim-2 font-nunito text-white/90 text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-5 sm:mb-7"
+            </motion.h1>
+            <motion.p
+              initial={reduce ? false : { opacity: 0, y: 12 }}
+              animate={reduce ? undefined : { opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+              className="font-nunito text-white/90 text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-5 sm:mb-7"
               style={{ textShadow: "0 0 5px rgba(0,0,0,0.8), 1px 1px 3px rgba(0,0,0,0.6)" }}
             >
               Organisez un anniversaire enfant au Mans sans stress. Aire de jeux intérieure couverte. Formules clés en main. Gâteau &amp; fun garantis.
-            </p>
-            <div
+            </motion.p>
+            <motion.div
+              initial={reduce ? false : { opacity: 0, y: 16 }}
+              animate={reduce ? undefined : { opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.32, ease: [0.34, 1.56, 0.64, 1] }}
             >
               <ClayButton href="#formules" tone="purple" size="lg" className="w-full sm:w-auto">
                 Choisissez votre formule
               </ClayButton>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

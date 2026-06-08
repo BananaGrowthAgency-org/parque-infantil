@@ -1,8 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import { motion, useReducedMotion } from "framer-motion";
 
 export default function HeroGarderie() {
+  const reduce = useReducedMotion();
 
   return (
     <section className="relative bg-[#F5EEFF]">
@@ -37,8 +39,11 @@ export default function HeroGarderie() {
         {/* Capa contenido — sin overflow-hidden */}
         <div className="absolute inset-0 pt-16 flex items-center justify-center">
           <div className="text-center px-4 sm:px-6 max-w-3xl w-full">
-            <h1
-              className="hero-anim-1 font-fredoka text-3xl sm:text-4xl md:text-6xl font-extrabold text-white leading-tight mb-3 sm:mb-4"
+            <motion.h1
+              initial={reduce ? false : { opacity: 0, y: 24 }}
+              animate={reduce ? undefined : { opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.34, 1.56, 0.64, 1] }}
+              className="font-fredoka text-3xl sm:text-4xl md:text-6xl font-extrabold text-white leading-tight mb-3 sm:mb-4"
               style={{ textShadow: "0 0 6px rgba(0,0,0,0.9), 1px 1px 4px rgba(0,0,0,0.7)" }}
             >
               Ludykid Le Mans | Garderie enfant parc indoor{" "}
@@ -48,22 +53,28 @@ export default function HeroGarderie() {
               >
                 dès 4 ans
               </span>
-            </h1>
+            </motion.h1>
 
-            <p
-              className="hero-anim-2 font-nunito text-white/90 text-sm sm:text-base md:text-lg leading-relaxed mb-5 sm:mb-8"
+            <motion.p
+              initial={reduce ? false : { opacity: 0, y: 16 }}
+              animate={reduce ? undefined : { opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+              className="font-nunito text-white/90 text-sm sm:text-base md:text-lg leading-relaxed mb-5 sm:mb-8"
               style={{ textShadow: "0 0 5px rgba(0,0,0,0.8), 1px 1px 3px rgba(0,0,0,0.6)" }}
             >
               À la recherche d&apos;une garderie au Mans&nbsp;? Confiez votre enfant dès&nbsp;4&nbsp;ans
               à un parc indoor sécurisé avec jeux, activités ludiques et animateurs.
-            </p>
+            </motion.p>
 
-            <div
+            <motion.div
+              initial={reduce ? false : { opacity: 0, y: 12 }}
+              animate={reduce ? undefined : { opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.28, ease: "easeOut" }}
             >
               <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-fredoka font-bold text-white text-sm shadow-clay-sm animate-float" style={{ backgroundColor: "#7B35A0" }}>
                 📍 Disponible uniquement sur place
               </span>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
