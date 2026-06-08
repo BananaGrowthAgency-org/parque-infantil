@@ -12,20 +12,6 @@ const securityHeaders = [
   { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
   // Fuerza HTTPS durante 1 año
   { key: "Strict-Transport-Security", value: "max-age=31536000; includeSubDomains" },
-  // Permite scripts de Google Tag Manager, Elfsight y fuentes de Google
-  {
-    key: "Content-Security-Policy",
-    value: [
-      "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://*.elfsight.com https://elfsightcdn.com https://ludykid.qweekle.com",
-      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.elfsight.com https://elfsightcdn.com",
-      "font-src 'self' https://fonts.gstatic.com https://*.elfsight.com https://elfsightcdn.com",
-      "img-src 'self' data: blob: https:",
-      "connect-src 'self' https://api.web3forms.com https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://region1.google-analytics.com https://*.elfsight.com https://elfsightcdn.com",
-      "frame-src https://www.googletagmanager.com https://ludykid.qweekle.com https://*.elfsight.com https://elfsightcdn.com https://maps.google.com https://www.google.com",
-      "worker-src 'self' blob:",
-    ].join("; "),
-  },
 ];
 
 const nextConfig = {
