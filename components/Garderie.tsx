@@ -188,7 +188,7 @@ export default function Garderie() {
 
       {/* 4. Petits */}
       <SectionIntro
-        title="Une aire de jeux intérieur pour les petits (1–3 ans)"
+        title="Une aire de jeux intérieure pour les petits (1–3 ans)"
         desc="Vos enfants découvrent le parc intérieur, explorent et s'amusent en toute sécurité, à leur rythme… Et vous profitez d'un moment de tranquillité."
         features={[
           { icon: "🌿", label: "Motricité",              desc: "— parcours adapté, jeux de construction" },

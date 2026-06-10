@@ -10,7 +10,7 @@ type Tone = "orange" | "purple" | "green" | "yellow" | "blue";
 
 const secciones = [
   {
-    titulo: "Une aire de jeux intérieur pour les petits (1–3 ans)",
+    titulo: "Une aire de jeux intérieure pour les petits (1–3 ans)",
     descripcion:
       "Vos enfants découvrent le parc intérieur, explorent et s'amusent en toute sécurité, à leur rythme…\nEt vous profitez d'un moment de tranquillité.",
     items: [
