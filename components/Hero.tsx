@@ -8,8 +8,8 @@ export default function Hero() {
   const reduce = useReducedMotion();
 
   return (
-    <section id="inicio" className="relative pt-16 bg-[#FFF4EC]">
-      <div className="relative h-[68vh] min-h-[560px] sm:min-h-[520px]">
+    <section id="inicio" className="relative bg-[#FFF4EC]">
+      <div className="relative" style={{ height: "calc(68vh + 64px)", minHeight: "calc(560px + 64px)" }}>
 
         {/* Capa media con su propio overflow-hidden */}
         <div className="absolute inset-0 overflow-hidden">
@@ -41,7 +41,7 @@ export default function Hero() {
         </div>
 
         {/* Capa contenido */}
-        <div className="absolute inset-0 flex items-center justify-center pt-8 sm:pt-0">
+        <div className="absolute inset-0 pt-16 flex items-center justify-center">
           <div className="text-center px-4 sm:px-6 w-full max-w-4xl">
 
             <motion.h1

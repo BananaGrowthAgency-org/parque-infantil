@@ -8,8 +8,8 @@ export default function HeroAnniversaire() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="relative pt-16 bg-[#FFF8EC]">
-      <div className="relative h-[68vh] min-h-[560px] sm:min-h-[500px]">
+    <section className="relative bg-[#FFF8EC]">
+      <div className="relative" style={{ height: "calc(68vh + 64px)", minHeight: "calc(560px + 64px)" }}>
         {/* Capa vídeo con su propio overflow-hidden */}
         <div className="absolute inset-0 overflow-hidden">
           {/* Poster optimizado → LCP rápido en WebP */}
@@ -43,7 +43,7 @@ export default function HeroAnniversaire() {
         </div>
 
         {/* Capa contenido — sin overflow-hidden para que nunca se recorte */}
-        <div className="absolute inset-0 flex items-center justify-center pt-8 sm:pt-0">
+        <div className="absolute inset-0 pt-16 flex items-center justify-center">
           <div className="text-center px-4 sm:px-6 max-w-3xl w-full">
             <motion.h1
               initial={reduce ? false : { opacity: 0, y: 24 }}

@@ -8,8 +8,8 @@ export default function HeroEscape() {
   const reduce = useReducedMotion();
 
   return (
-    <section id="hero-escape" className="relative pt-16 bg-[#F4FBF4]">
-      <div className="relative h-[68vh] min-h-[540px] sm:min-h-[460px]">
+    <section id="hero-escape" className="relative bg-[#F4FBF4]">
+      <div className="relative" style={{ height: "calc(68vh + 64px)", minHeight: "calc(540px + 64px)" }}>
         {/* Capa imagen con su propio overflow-hidden */}
         <div className="absolute inset-0 overflow-hidden">
           <Image
@@ -31,7 +31,7 @@ export default function HeroEscape() {
         </div>
 
         {/* Capa contenido — sin overflow-hidden para que nunca se recorte */}
-        <div className="absolute inset-0 flex items-center justify-center py-10 sm:py-0">
+        <div className="absolute inset-0 pt-16 flex items-center justify-center">
           <div className="text-center px-4 sm:px-6 max-w-3xl w-full">
             <motion.h1
               initial={reduce ? false : { opacity: 0, y: 24 }}

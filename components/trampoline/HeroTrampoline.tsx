@@ -8,8 +8,8 @@ export default function HeroTrampoline() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="relative pt-16">
-      <div className="relative h-[68vh] min-h-[540px] sm:min-h-[460px]">
+    <section className="relative bg-[#FFF8EC]">
+      <div className="relative" style={{ height: "calc(68vh + 64px)", minHeight: "calc(540px + 64px)" }}>
         {/* Capa imagen con su propio overflow-hidden */}
         <div className="absolute inset-0 overflow-hidden">
           <Image
@@ -32,7 +32,7 @@ export default function HeroTrampoline() {
         </div>
 
         {/* Capa contenido — sin overflow-hidden para que nunca se recorte */}
-        <div className="absolute inset-0 flex items-center justify-center py-10 sm:py-0">
+        <div className="absolute inset-0 pt-16 flex items-center justify-center">
           <div className="text-center px-4 sm:px-6 max-w-3xl w-full">
             <motion.h1
               initial={reduce ? false : { opacity: 0, y: 24 }}
