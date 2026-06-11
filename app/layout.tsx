@@ -41,7 +41,9 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/home/tobogan-azul.jpg",
+        url: "/images/og-home.jpg",
+        width: 1200,
+        height: 630,
         alt: "Ludykid Le Mans – Parc de jeux indoor enfants",
       },
     ],
