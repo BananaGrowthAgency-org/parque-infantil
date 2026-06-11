@@ -228,6 +228,74 @@ export default function TarifsPage() {
         </div>
       </section>
 
+      {/* Groupes, Écoles & Entreprises */}
+      <section className="px-6 pb-10">
+        <div className="max-w-5xl mx-auto">
+          <FadeInUp>
+            <div className="rounded-clay-lg overflow-hidden shadow-clay-blue border-[3px] border-[#1877F2]">
+              <div className="bg-[#1877F2] px-6 py-4 flex items-center gap-3">
+                <span className="text-2xl">🎉</span>
+                <h2 className="font-fredoka text-xl font-extrabold text-white">
+                  Groupes, Écoles &amp; Entreprises
+                </h2>
+              </div>
+              <div className="bg-[#EEF4FF] px-6 py-6 space-y-6">
+                <p className="font-nunito text-sm text-gray-700 leading-relaxed">
+                  Ludykid accueille également les groupes, établissements scolaires, centres de loisirs, associations et comités d&apos;entreprise pour des moments de partage adaptés à chaque besoin.
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {/* Écoles & CSE */}
+                  <div className="rounded-clay bg-white/70 p-5 flex gap-4">
+                    <span className="text-2xl shrink-0">🏫</span>
+                    <div>
+                      <h3 className="font-fredoka font-extrabold text-[#1877F2] text-base mb-1">Écoles &amp; CSE</h3>
+                      <p className="font-nunito text-sm text-gray-600 leading-relaxed">Organisation de soirées dédiées sur réservation, uniquement les vendredis soirs. Une solution idéale pour réunir enfants, familles ou collaborateurs dans un cadre ludique et convivial.</p>
+                    </div>
+                  </div>
+
+                  {/* Centres de loisirs & Groupes */}
+                  <div className="rounded-clay bg-white/70 p-5 flex gap-4">
+                    <span className="text-2xl shrink-0">👧</span>
+                    <div>
+                      <h3 className="font-fredoka font-extrabold text-[#1877F2] text-base mb-1">Centres de loisirs &amp; Groupes</h3>
+                      <p className="font-nunito text-sm text-gray-600 leading-relaxed">Accueil sur réservation avec tarif groupe avantageux. Possibilité de réserver un espace dédié pour une demi-journée ou une journée complète afin de profiter du parc dans les meilleures conditions.</p>
+                    </div>
+                  </div>
+
+                  {/* Arbres de Noël */}
+                  <div className="rounded-clay bg-white/70 p-5 flex gap-4">
+                    <span className="text-2xl shrink-0">🎄</span>
+                    <div>
+                      <h3 className="font-fredoka font-extrabold text-[#1877F2] text-base mb-1">Arbres de Noël</h3>
+                      <p className="font-nunito text-sm text-gray-600 leading-relaxed">Organisez votre arbre de Noël chez Ludykid ! Plusieurs formules sont disponibles, en journée ou en privatisation le vendredi soir, avec différentes options pour créer un événement sur mesure.</p>
+                    </div>
+                  </div>
+
+                  {/* Billetterie CSE */}
+                  <div className="rounded-clay bg-white/70 p-5 flex gap-4">
+                    <span className="text-2xl shrink-0">🎟️</span>
+                    <div>
+                      <h3 className="font-fredoka font-extrabold text-[#1877F2] text-base mb-1">Billetterie CSE</h3>
+                      <p className="font-nunito text-sm text-gray-600 leading-relaxed">Proposez des entrées Ludykid à vos collaborateurs grâce à notre billetterie CSE. Commande à partir de 10 billets avec un tarif dégressif selon les quantités achetées.</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Réservation */}
+                <div className="rounded-clay bg-[#1877F2]/10 border-[2px] border-[#1877F2]/30 p-5 flex gap-4">
+                  <span className="text-2xl shrink-0">📞</span>
+                  <div>
+                    <h3 className="font-fredoka font-extrabold text-[#1877F2] text-base mb-1">Réservation &amp; Informations</h3>
+                    <p className="font-nunito text-sm text-gray-600 leading-relaxed">Ces prestations étant personnalisées, les réservations et commandes s&apos;effectuent exclusivement par téléphone ou par e-mail. Notre équipe est à votre disposition pour vous accompagner dans l&apos;organisation de votre projet.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </FadeInUp>
+        </div>
+      </section>
+
       {/* Plan d'accès */}
       <section className="px-6 pb-20">
         <div className="max-w-5xl mx-auto">
