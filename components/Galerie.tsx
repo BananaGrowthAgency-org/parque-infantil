@@ -94,6 +94,7 @@ export default function Galerie() {
 
   return (
     <section
+      id="galerie"
       className="relative py-16 overflow-hidden bg-white"
     >
       {/* Halo verde suave detrás del carrusel — sin tocar el borde superior */}

@@ -193,7 +193,7 @@ export default function Atracciones({ from = 0, to = secciones.length, lastBg = 
   return (
     <section id={sectionId}>
       {slice.map((s, i) => (
-        <div key={s.titulo} className="relative py-16" style={{ backgroundColor: s.bgLight }}>
+        <div key={s.titulo} id={`seccion-${from + i}`} className="relative py-16" style={{ backgroundColor: s.bgLight }}>
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute top-6 left-4 opacity-20 animate-float">
               <Doodle type={s.doodle.type} color={s.doodle.color} size={64} />
