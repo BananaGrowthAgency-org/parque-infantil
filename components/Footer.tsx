@@ -180,7 +180,7 @@ export default function Footer({ waveBg = "#F9FAFB" }: { waveBg?: string }) {
             >
               <span className="text-xs text-gray-500 font-nunito tracking-wide">réalisé par</span>
               <Image
-                src="/images/iconos/bga-logo.png"
+                src="/images/iconos/logoBGA.png"
                 alt="Banana Growth Agency"
                 width={120}
                 height={42}
