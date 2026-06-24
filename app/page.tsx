@@ -35,7 +35,7 @@ export default function Home() {
       <StatsBar />
 
       {/* Espace petits + Parc indoor → Cumple */}
-      <Atracciones sectionId="atracciones" from={0} to={2} lastBg="#EDFAED" />
+      <Atracciones sectionId="attractions" from={0} to={2} lastBg="#EDFAED" />
       <Cumple />
 
       {/* Restauration → Testimonios */}

@@ -4,7 +4,7 @@ import Wave from "./Wave";
 
 const NAV = [
   { label: "Accueil", href: "/" },
-  { label: "Attractions", href: "/#atracciones" },
+  { label: "Attractions", href: "/#attractions" },
   { label: "Anniversaire", href: "/anniversaire" },
   { label: "Tarifs", href: "/tarifs" },
   { label: "Infos pratiques", href: "/#infos" },
