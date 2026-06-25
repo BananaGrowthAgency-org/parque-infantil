@@ -61,7 +61,7 @@ const localBusinessSchema = {
     "Parc de jeux indoor pour enfants de 1 à 12 ans au Mans. 1 200 m² d'activités couvertes : trampolines, escape game, laser game, accrobranche, espace restauration et anniversaires clé en main.",
   url: "https://www.ludykid.com",
   telephone: "+33243414869",
-  email: "contact@ludykid.com",
+  email: "ludykidparc@gmail.com",
   image: "https://www.ludykid.com/favicon.png",
   priceRange: "€€",
   currenciesAccepted: "EUR",

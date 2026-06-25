@@ -147,8 +147,8 @@ export default function Footer({ waveBg = "#F9FAFB" }: { waveBg?: string }) {
                 </li>
                 <li className="flex items-start gap-2">
                   <span aria-hidden="true">✉️</span>
-                  <a href="mailto:contact@ludykid.com" className="hover:text-white transition-colors">
-                    contact@ludykid.com
+                  <a href="mailto:ludykidparc@gmail.com" className="hover:text-white transition-colors">
+                    ludykidparc@gmail.com
                   </a>
                 </li>
                 <li className="pt-2">
