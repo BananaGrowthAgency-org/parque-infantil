@@ -153,11 +153,8 @@ export default function Footer({ waveBg = "#F9FAFB" }: { waveBg?: string }) {
                 </li>
                 <li className="pt-2">
                   <div className="rounded-lg border border-[#FFD600]/30 bg-[#FFD600]/10 px-3 py-2.5 space-y-1.5">
-                    <p className="font-fredoka font-bold text-[#FFD600] text-sm flex items-center gap-1.5">
+                    <p className="font-fredoka font-bold text-[#FFD600] text-sm flex items-center gap-2 tracking-wide">
                       ☀️ Horaires d&apos;été
-                    </p>
-                    <p className="text-gray-200 text-xs font-nunito leading-relaxed">
-                      Coucou !
                     </p>
                     <p className="text-gray-200 text-xs font-nunito leading-relaxed">
                       <span className="text-[#FFD600] font-bold">Lun → Sam</span> 10h–18h
