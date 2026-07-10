@@ -194,7 +194,7 @@ export const CATEGORIES: Categorie[] = [
               { name: "Italiana",   description: "tomates cerises, perles de mozza, pesto" },
               { name: "Diavola",    description: "base tomate, mozza, salami épicé" },
               { name: "4 fromages", description: "base tomate, mozza, scamorza, fromage râpé, gorgonzola aop" },
-              { name: "Margherita", description: "base tomate, mozza" },
+
             ],
           },
           { name: "Frite 150 G", price: "2,10 €" },
