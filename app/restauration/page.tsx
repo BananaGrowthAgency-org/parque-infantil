@@ -1,9 +1,11 @@
+import { cookies } from "next/headers";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FadeInUp from "@/components/ui/FadeInUp";
 import HeroRestauracion from "@/components/restauration/HeroRestauracion";
-import CategoryCard from "@/components/restauration/CategoryCard";
-import { CATEGORIES } from "@/components/restauration/data";
+import EditableHub from "@/components/restauration/edit/EditableHub";
+import { getCarte } from "@/lib/restauration/store";
+import { SESSION_COOKIE, verifySessionToken } from "@/lib/auth";
 
 export const metadata = {
   title: "Restauration – Ludy'cafet · Ludykid Le Mans",
@@ -18,7 +20,10 @@ export const metadata = {
   alternates: { canonical: "https://www.ludykid.com/restauration" },
 };
 
-export default function RestaurationPage() {
+export default async function RestaurationPage() {
+  const carte = await getCarte();
+  const editable = await verifySessionToken((await cookies()).get(SESSION_COOKIE)?.value);
+
   return (
     <main className="bg-[#F4FBF4] min-h-screen">
       <Navbar />
@@ -46,20 +51,9 @@ export default function RestaurationPage() {
         </div>
       </div>
 
-      {/* Grid de catégories */}
+      {/* Grid de catégories (editable in-place si hay sesión de gérant) */}
       <section id="carte" className="pb-16 px-6 pt-2">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-          {CATEGORIES.map((cat, i) => (
-            <FadeInUp
-              key={cat.slug}
-              delay={i * 0.08}
-              y={28}
-              className={i === CATEGORIES.length - 1 && CATEGORIES.length % 2 === 1 ? "md:col-span-2 md:max-w-md md:mx-auto md:w-full" : ""}
-            >
-              <CategoryCard cat={cat} />
-            </FadeInUp>
-          ))}
-        </div>
+        <EditableHub initialCarte={carte} editable={editable} />
       </section>
 
       {/* Paiements acceptés */}

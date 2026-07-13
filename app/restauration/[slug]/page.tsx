@@ -1,22 +1,24 @@
 import { notFound } from "next/navigation";
+import { cookies } from "next/headers";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FadeInUp from "@/components/ui/FadeInUp";
 import SquiggleTitle from "@/components/ui/SquiggleTitle";
-import Menu from "@/components/restauration/Menu";
-import InfosUtilesContent from "@/components/restauration/InfosUtilesContent";
 import CategoryCard from "@/components/restauration/CategoryCard";
-import { CATEGORIES } from "@/components/restauration/data";
+import EditableCategory from "@/components/restauration/edit/EditableCategory";
+import { getCarte } from "@/lib/restauration/store";
+import { CARTE_SEED } from "@/lib/restauration/seed";
+import { SESSION_COOKIE, verifySessionToken } from "@/lib/auth";
 
 export function generateStaticParams() {
-  return CATEGORIES.map((c) => ({ slug: c.slug }));
+  return CARTE_SEED.map((c) => ({ slug: c.slug }));
 }
 
 type Params = { slug: string };
 
 export async function generateMetadata({ params }: { params: Promise<Params> }) {
   const { slug } = await params;
-  const cat = CATEGORIES.find((c) => c.slug === slug);
+  const cat = (await getCarte()).find((c) => c.slug === slug);
   if (!cat) return {};
   return {
     title: `${cat.label} – Ludy'cafet · Ludykid Le Mans`,
@@ -26,11 +28,12 @@ export async function generateMetadata({ params }: { params: Promise<Params> }) 
 
 export default async function CategoryPage({ params }: { params: Promise<Params> }) {
   const { slug } = await params;
-  const cat = CATEGORIES.find((c) => c.slug === slug);
+  const carte = await getCarte();
+  const cat = carte.find((c) => c.slug === slug);
   if (!cat) notFound();
 
-  const isInfos = slug === "infos-utiles";
-  const others = CATEGORIES.filter((c) => c.slug !== slug);
+  const editable = await verifySessionToken((await cookies()).get(SESSION_COOKIE)?.value);
+  const others = carte.filter((c) => c.slug !== slug);
 
   return (
     <main style={{ backgroundColor: cat.softBg }} className="min-h-screen">
@@ -62,27 +65,7 @@ export default async function CategoryPage({ params }: { params: Promise<Params>
       </section>
 
       <section className="pb-20 px-6">
-        <div className={`max-w-4xl mx-auto bg-white rounded-clay-lg p-8 md:p-12 ${cat.shadow}`}>
-          {cat.alert && (
-            <p
-              className="mb-7 text-center font-fredoka font-extrabold text-lg md:text-xl tracking-wide"
-              style={{ color: cat.color }}
-              role="note"
-            >
-              {cat.alert}
-            </p>
-          )}
-
-          {isInfos ? (
-            <InfosUtilesContent />
-          ) : cat.sections ? (
-            <Menu sections={cat.sections} color={cat.color} />
-          ) : (
-            <div className="py-12 text-center font-nunito italic text-gray-400">
-              Carte à venir 🍴
-            </div>
-          )}
-        </div>
+        <EditableCategory category={cat} editable={editable} />
       </section>
 
       {/* À découvrir aussi — las otras 4 categorías */}
