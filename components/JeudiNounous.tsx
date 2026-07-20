@@ -31,7 +31,7 @@ function SectionIntro({
 }: {
   title: ReactNode;
   desc?: string;
-  features: { icon: string; label: string; desc?: string }[];
+  features: { icon: string; label: string; desc?: string; dates?: string[] }[];
   cta?: string;
   ctaHref?: string;
   ctaTone?: "blue" | "orange" | "purple" | "green" | "yellow";
@@ -100,6 +100,20 @@ function SectionIntro({
                           {" "}
                           <span className="text-gray-500">{f.desc}</span>
                         </span>
+                      ) : f.dates ? (
+                        <>
+                          <span className="font-bold block text-gray-800 mb-2">{f.label}</span>
+                          <span className="flex flex-wrap gap-1.5">
+                            {f.dates.map((d) => (
+                              <span
+                                key={d}
+                                className="inline-block bg-[#FFF0E0] text-[#C05C0A] font-fredoka font-bold text-xs px-2.5 py-1 rounded-full shadow-clay-inset"
+                              >
+                                {d}
+                              </span>
+                            ))}
+                          </span>
+                        </>
                       ) : (
                         <>
                           <span className="font-bold block text-gray-800">{f.label}</span>
@@ -138,7 +152,7 @@ export default function JeudiNounous() {
         title={<>Le rendez-vous mensuel <span style={{ color: "#E8731A" }}>des Nounous</span> 👩‍🍼</>}
         desc="Nous proposons aux assistantes maternelles un jeudi matin par mois l'accès à notre parc sur un temps qui leur est réservé, au tarif de 6€ par enfant de plus d'un an."
         features={[
-          { icon: "📅", label: "Un jeudi matin par mois",  desc: "Un moment dédié rien que pour vous et les enfants." },
+          { icon: "📅", label: "Un jeudi matin par mois", dates: ["17/09", "15/10", "19/11", "17/12", "21/01", "18/02", "18/03", "15/04", "20/05", "17/06"] },
           { icon: "👫", label: "De 0 à 12 ans",            desc: "Une activité adaptée à tous les âges pour s'amuser en toute sécurité." },
           { icon: "🎟️", label: "Tarif",                    desc: "6,00 € par enfant de plus d'un an." },
           { icon: "🎁", label: "Un temps privilégié",      desc: "Pour jouer, se dépenser et partager de bons moments." },
