@@ -102,7 +102,8 @@ function SectionIntro({
                         </span>
                       ) : f.dates ? (
                         <>
-                          <span className="font-bold block text-gray-800 mb-2">{f.label}</span>
+                          <span className="font-bold block text-gray-800 mb-1">{f.label}</span>
+                          {f.desc && <span className="text-gray-500 block mb-2">{f.desc}</span>}
                           <span className="flex flex-wrap gap-1.5">
                             {f.dates.map((d) => (
                               <span
@@ -152,7 +153,7 @@ export default function JeudiNounous() {
         title={<>Le rendez-vous mensuel <span style={{ color: "#E8731A" }}>des Nounous</span> 👩‍🍼</>}
         desc="Nous proposons aux assistantes maternelles un jeudi matin par mois l'accès à notre parc sur un temps qui leur est réservé, au tarif de 6€ par enfant de plus d'un an."
         features={[
-          { icon: "📅", label: "Un jeudi matin par mois", dates: ["17/09", "15/10", "19/11", "17/12", "21/01", "18/02", "18/03", "15/04", "20/05", "17/06"] },
+          { icon: "📅", label: "Un jeudi matin par mois", desc: "Un moment dédié rien que pour vous et les enfants :", dates: ["17/09", "15/10", "19/11", "17/12", "21/01", "18/02", "18/03", "15/04", "20/05", "17/06"] },
           { icon: "👫", label: "De 0 à 12 ans",            desc: "Une activité adaptée à tous les âges pour s'amuser en toute sécurité." },
           { icon: "🎟️", label: "Tarif",                    desc: "6,00 € par enfant de plus d'un an." },
           { icon: "🎁", label: "Un temps privilégié",      desc: "Pour jouer, se dépenser et partager de bons moments." },
