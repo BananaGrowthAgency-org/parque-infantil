@@ -153,7 +153,7 @@ export default function JeudiNounous() {
         title={<>Le rendez-vous mensuel <span style={{ color: "#E8731A" }}>des Nounous</span> 👩‍🍼</>}
         desc="Nous proposons aux assistantes maternelles un jeudi matin par mois l'accès à notre parc sur un temps qui leur est réservé, au tarif de 6€ par enfant de plus d'un an."
         features={[
-          { icon: "📅", label: "Un jeudi matin par mois", desc: "Un moment dédié rien que pour vous et les enfants :", dates: ["17/09", "15/10", "19/11", "17/12", "21/01", "18/02", "18/03", "15/04", "20/05", "17/06"] },
+          { icon: "📅", label: "Un jeudi matin par mois", desc: "Les dates de l'année 2026-27 sont les suivantes :", dates: ["17/09", "15/10", "19/11", "17/12", "21/01", "18/02", "18/03", "15/04", "20/05", "17/06"] },
           { icon: "👫", label: "De 0 à 12 ans",            desc: "Une activité adaptée à tous les âges pour s'amuser en toute sécurité." },
           { icon: "🎟️", label: "Tarif",                    desc: "6,00 € par enfant de plus d'un an." },
           { icon: "🎁", label: "Un temps privilégié",      desc: "Pour jouer, se dépenser et partager de bons moments." },
