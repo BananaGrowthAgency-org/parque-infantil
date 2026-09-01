@@ -7,15 +7,11 @@ const ITEMS = [
 
 const TEXT = ITEMS.join("   ·   ");
 
-const URL = "https://ludykid.qweekle.com/shop/ludykid/ticketing?lang=fr&_gl=1*cvdwjz*_gcl_au*OTk0MDYwMTI2LjE3NzYxNTQ0ODQuMTIwMDYyMjU4NC4xNzgyMzk2MjU2LjE3ODIzOTg0NjE.";
-
 export default function PromoBanner() {
   return (
-    <a
-      href={URL}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="fixed top-0 left-0 right-0 z-[60] w-full overflow-hidden bg-lk-orange h-9 flex items-center cursor-pointer"
+    <div
+      className="fixed top-0 left-0 right-0 z-[60] w-full overflow-hidden bg-lk-orange h-9 flex items-center"
+      role="status"
       aria-label="Mercredi en folie — 1 entrée achetée = 1 entrée offerte, tous les mercredis hors vacances scolaires"
     >
       <div className="flex animate-marquee whitespace-nowrap">
@@ -30,6 +26,6 @@ export default function PromoBanner() {
           </span>
         ))}
       </div>
-    </a>
+    </div>
   );
 }
