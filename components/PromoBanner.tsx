@@ -1,9 +1,8 @@
 const ITEMS = [
-  "☀️ Pass été 2026",
-  "☀️ Accès au parc en illimité",
-  "☀️ Juillet & Août",
-  "☀️ 1 enfant + 1 adulte accompagnateur",
-  "☀️",
+  "🎉 MERCREDI EN FOLIE",
+  "1 ENTRÉE ACHETÉE = 1 ENTRÉE OFFERTE",
+  "TOUS LES MERCREDIS HORS VACANCES SCOLAIRES",
+  "OFFRE DIRECTEMENT SUR PLACE",
 ];
 
 const TEXT = ITEMS.join("   ·   ");
@@ -17,7 +16,7 @@ export default function PromoBanner() {
       target="_blank"
       rel="noopener noreferrer"
       className="fixed top-0 left-0 right-0 z-[60] w-full overflow-hidden bg-lk-orange h-9 flex items-center cursor-pointer"
-      aria-label="Pass été 2026 — Accès au parc en illimité juillet & août"
+      aria-label="Mercredi en folie — 1 entrée achetée = 1 entrée offerte, tous les mercredis hors vacances scolaires"
     >
       <div className="flex animate-marquee whitespace-nowrap">
         {[0, 1].map((n) => (
