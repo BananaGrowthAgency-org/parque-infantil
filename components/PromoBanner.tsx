@@ -1,18 +1,12 @@
-const ITEMS = [
-  "🎉 MERCREDI EN FOLIE",
-  "1 ENTRÉE ACHETÉE = 1 ENTRÉE OFFERTE",
-  "TOUS LES MERCREDIS HORS VACANCES SCOLAIRES",
-  "OFFRE DIRECTEMENT SUR PLACE",
-];
-
-const TEXT = ITEMS.join("   ·   ");
+const TEXT =
+  "🎂 Fêtez son anniversaire chez Ludykid le mercredi et profitez de -20 % sur toutes nos formules anniversaires ! 🎉";
 
 export default function PromoBanner() {
   return (
     <div
       className="fixed top-0 left-0 right-0 z-[60] w-full overflow-hidden bg-lk-orange h-9 flex items-center"
       role="status"
-      aria-label="Mercredi en folie — 1 entrée achetée = 1 entrée offerte, tous les mercredis hors vacances scolaires"
+      aria-label="Fêtez son anniversaire chez Ludykid le mercredi et profitez de -20 % sur toutes nos formules anniversaires"
     >
       <div className="flex animate-marquee whitespace-nowrap">
         {[0, 1].map((n) => (

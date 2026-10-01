@@ -8,7 +8,7 @@ import ClayButton from "../ui/ClayButton";
 
 const BULLETS = [
   { icon: "🎁", text: "Remise appliquée directement en caisse" },
-  { icon: "📅", text: "Offre valable uniquement le dimanche (hors options)" },
+  { icon: "📅", text: "Offre valable uniquement le mercredi (hors options)" },
   { icon: "🎈", text: "Réserve ta date dès maintenant en ligne" },
 ];
 
@@ -34,8 +34,8 @@ export default function Dimanche() {
               style={{ minHeight: 380 }}
             >
               <Image
-                src="/images/anniversaire/dimanche-banner.png"
-                alt="Fête ton anniv' chez Ludykid -20% sur les formules le dimanche"
+                src="/images/anniversaire/mercredi-banner.png"
+                alt="Fête ton anniv' chez Ludykid -20% sur les formules le mercredi"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -45,7 +45,7 @@ export default function Dimanche() {
                   className="font-fredoka font-bold text-white text-sm px-5 py-2.5 rounded-full shadow-clay-sm animate-float inline-flex items-center gap-2"
                   style={{ backgroundColor: "#7B35A0" }}
                 >
-                  🎈 -20% le dimanche
+                  🎈 -20% le mercredi
                 </span>
               </div>
             </div>
@@ -58,19 +58,19 @@ export default function Dimanche() {
                 className="font-fredoka text-3xl md:text-4xl font-extrabold leading-tight mb-3"
                 style={{ color: "#7B35A0" }}
               >
-                🎈 Dimanche malin
+                🎈 Mercredi malin
               </h2>
               <h3 className="font-fredoka text-xl md:text-2xl font-bold text-gray-800 mb-4 leading-snug">
                 -20% sur les anniversaires
               </h3>
               <p className="font-nunito font-extrabold text-gray-900 leading-relaxed mb-3 text-base">
-                🎉 Et si le meilleur jour pour fêter un anniversaire… c&apos;était le dimanche ?
+                🎉 Et si le meilleur jour pour fêter un anniversaire… c&apos;était le mercredi ?
               </p>
               <p className="font-nunito text-gray-500 leading-relaxed mb-3 text-sm">
                 Chez Ludykid, on rend ce moment encore plus sympa :
               </p>
               <p className="font-nunito font-extrabold text-gray-900 leading-relaxed mb-5 text-base">
-                👉 -20 % sur toutes les formules anniversaires, chaque dimanche
+                👉 -20 % sur toutes les formules anniversaires, chaque mercredi
               </p>
               <p className="font-nunito text-gray-500 leading-relaxed mb-5 text-sm">
                 De quoi offrir une fête mémorable, sans se poser de questions ✨
