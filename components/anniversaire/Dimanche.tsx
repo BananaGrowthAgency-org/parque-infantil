@@ -28,19 +28,18 @@ export default function Dimanche() {
       </div>
 
       <div className="max-w-6xl mx-auto px-6 py-16 relative">
-        <div className="flex flex-col md:flex-row gap-8 items-stretch">
+        <div className="flex flex-col md:flex-row gap-8 items-center">
           {/* Card promo — imagen banner full bleed */}
           <FadeInUp className="w-full md:w-1/2" y={28}>
             <div
-              className="group relative h-full rounded-clay-lg overflow-hidden shadow-clay-purple transition-transform duration-500 hover:-translate-y-1"
-              style={{ minHeight: 380, backgroundColor: "#FFDE59" }}
+              className="group relative aspect-square rounded-clay-lg overflow-hidden shadow-clay-purple transition-transform duration-500 hover:-translate-y-1"
             >
               <Image
                 src="/images/anniversaire/mercredi-banner.png"
                 alt="Fête ton anniv' chez Ludykid -20% sur les formules le mercredi"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-contain transition-transform duration-700 group-hover:scale-105"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute bottom-5 left-5">
                 <span
