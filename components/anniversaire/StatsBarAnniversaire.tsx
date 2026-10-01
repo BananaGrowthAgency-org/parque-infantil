@@ -36,7 +36,7 @@ function PngIcon({ src, size = 52 }: { src: string; size?: number }) {
 const stats = [
   { src: "/images/iconos/faire-la-fete.png",      label: "4 formules au choix" },
   { src: "/images/iconos/yoga.png",               label: "100% fun 0% stress" },
-  { src: "/images/iconos/etiquette-de-remise.png", label: "-20% sur les formules\nle dimanche" },
+  { src: "/images/iconos/etiquette-de-remise.png", label: "-20% sur les formules\nle mercredi" },
   { src: "/images/iconos/enfants.png",            label: "1 à 12 ans" },
   { src: "/images/iconos/pile-de-pieces.png",     label: "Dès 10,50€ /enfant" },
 ];
