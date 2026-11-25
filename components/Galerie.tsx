@@ -17,7 +17,7 @@ const photos: Slide[] = [
   { src: "/images/autos.jpg",        alt: "Bumpers" },
   { src: "/images/home/seccion1.jpg",     alt: "Bébé dans les balles" },
   { src: "/images/tunel.jpg",        alt: "Tunnel d'exploration" },
-  { type: "video", src: "/images/restauration/VID_20260404_120342.mp4", alt: "Visite du parc" },
+  { type: "video", src: "/images/restauration/resto-video-1.mp4", alt: "Visite du parc" },
   { src: "/images/home/seccion3.jpg",     alt: "Trampolines" },
   { src: "/images/tobogan-tubo.jpg", alt: "Piste de bouées" },
   { src: "/images/home/cumple.jpg",       alt: "Fête d'anniversaire" },
@@ -170,16 +170,28 @@ export default function Galerie() {
                 }}
               >
                 {photo.type === "video" ? (
-                  <video
-                    src={photo.src}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    autoPlay={isCenter}
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
-                    draggable={false}
-                  />
+                  isCenter ? (
+                    <video
+                      src={photo.src}
+                      poster={photo.src.replace(/\.mp4$/, "-poster.jpg")}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="none"
+                      draggable={false}
+                    />
+                  ) : (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={photo.src.replace(/\.mp4$/, "-poster.jpg")}
+                      alt=""
+                      loading="lazy"
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      draggable={false}
+                    />
+                  )
                 ) : (
                   <Image
                     src={photo.src}

@@ -19,6 +19,9 @@ const photos: Slide[] = [
   { type: "video", src: "/images/laser-game/anniv-laser.mp4",      alt: "Laser game" },
 ];
 
+// Póster JPG generado junto a cada vídeo (xxx.mp4 → xxx-poster.jpg)
+const posterOf = (src: string) => src.replace(/\.mp4$/, "-poster.jpg");
+
 const BRAND = "#2E9E2E";
 const DOT_INACTIVE = "#CFE9CF";
 const AUTOPLAY_MS = 4000;
@@ -33,7 +36,7 @@ export default function PhotosAnniv() {
   const [paused, setPaused] = useState(false);
   const [drag, setDrag] = useState<{ startX: number; dx: number } | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const videoRefs = useRef<Map<number, HTMLVideoElement>>(new Map());
+  const [visible, setVisible] = useState(false);
   const total = photos.length;
 
   const go = useCallback(
@@ -42,11 +45,24 @@ export default function PhotosAnniv() {
   );
   const goTo = useCallback((i: number) => setIndex(((i % total) + total) % total), [total]);
 
+  // Solo rota (y reproduce vídeo) cuando el carrusel está en pantalla
   useEffect(() => {
-    if (paused || drag) return;
+    const el = containerRef.current;
+    if (!el) return;
+    let inView = false;
+    const update = () => setVisible(inView && document.visibilityState === "visible");
+    const io = new IntersectionObserver(([e]) => { inView = e.isIntersecting; update(); }, { threshold: 0.25 });
+    io.observe(el);
+    // Pestaña en segundo plano → pausa (una pestaña olvidada costó ~775 GB en 4 días)
+    document.addEventListener("visibilitychange", update);
+    return () => { io.disconnect(); document.removeEventListener("visibilitychange", update); };
+  }, []);
+
+  useEffect(() => {
+    if (paused || drag || !visible) return;
     const id = setInterval(() => go(1), AUTOPLAY_MS);
     return () => clearInterval(id);
-  }, [paused, drag, go]);
+  }, [paused, drag, visible, go]);
 
   useEffect(() => {
     const el = containerRef.current;
@@ -73,17 +89,6 @@ export default function PhotosAnniv() {
     else if (drag.dx < -SWIPE_THRESHOLD) go(1);
     setDrag(null);
   };
-
-  useEffect(() => {
-    videoRefs.current.forEach((vid, i) => {
-      if (i === index) {
-        vid.currentTime = 0;
-        vid.play().catch(() => {});
-      } else {
-        vid.pause();
-      }
-    });
-  }, [index]);
 
   const offsetOf = (i: number) => {
     let d = i - index;
@@ -178,19 +183,29 @@ export default function PhotosAnniv() {
                 }}
               >
                 {photo.type === "video" ? (
-                  <video
-                    ref={(el) => {
-                      if (el) videoRefs.current.set(i, el);
-                      else videoRefs.current.delete(i);
-                    }}
-                    src={photo.src}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
-                    draggable={false}
-                  />
+                  isCenter && visible ? (
+                    <video
+                      key={photo.src}
+                      src={photo.src}
+                      poster={posterOf(photo.src)}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="none"
+                      draggable={false}
+                    />
+                  ) : (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={posterOf(photo.src)}
+                      alt=""
+                      loading="lazy"
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      draggable={false}
+                    />
+                  )
                 ) : (
                   <Image
                     src={photo.src}

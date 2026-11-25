@@ -30,6 +30,11 @@ const nextConfig = {
         source: "/(.*)",
         headers: securityHeaders,
       },
+      // Vídeos y pósters: caché navegador 7 días (evita re-descargas = Fast Data Transfer Vercel)
+      {
+        source: "/images/:path*.(mp4|jpg)",
+        headers: [{ key: "Cache-Control", value: "public, max-age=604800, stale-while-revalidate=86400" }],
+      },
     ];
   },
   async redirects() {
